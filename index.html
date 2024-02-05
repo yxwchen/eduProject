@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="Zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教育部防災教育資訊網前台</title>
+    <link rel="stylesheet" href="./assets/scss/all.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/facicon.ico" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js" type="text/javascript"></script>
+    <!-- bs js (自己放的js檔會出錯～先用cdn) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div>
+        <!-- 導覽列 -->
+        <header class="position-relative container-fluid gx-0">
+            <ul class="toolNav">
+                <a href="./sitemap.html" title="網站導覽">
+                    <li>網站導覽</li>
+                </a>
+                <a href="./qa.html" title="常見問題">
+                    <li>常見問題</li>
+                </a>
+                <a href="./link.html" title="相關連結">
+                    <li>相關連結</li>
+                </a>
+                <a href="" title="English英文版網站">
+                    <li>English</li>
+                </a>
+            </ul>
+            <div class="mainNavWrap">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <a accesskey="U" href="#" title="上方功能區塊" class="accesskey"> ::: </a>
+                    </div>
+                    <div class="logo">
+                        <h1>
+                            <a tabindex="1" href="./index.html" title="防災教育資訊網">防災教育資訊網</a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <nav class="mainNavInnerWrap">
+                        <ul class="mainNav">
+                            <a href="./introduction.html" class="mainNavLink" title="計畫簡介">
+                                <img src="./assets/images/icon/aboutDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">計畫簡介</li>
+                            </a>
+                            <a href="./teachingMaterial.html" class="mainNavLink" title="教學資源">
+                                <img src="./assets/images/icon/materialDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">教學資源</li>
+                            </a>
+                            <a href="./news.html" class="mainNavLink" title="最新消息">
+                                <img src="./assets/images/icon/newsDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">最新消息</li>
+                            </a>
+                            <a href="./activity.html" class="mainNavLink" title="年度活動">
+                                <img src="./assets/images/icon/eventDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">年度活動</li>
+                            </a>
+                            <a href="./featureCampus.html" class="mainNavLink" title="特色防災校園">
+                                <img src="./assets/images/icon/campusDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">特色防災校園</li>
+                            </a>
+                            <a href="./newsletter.html" class="mainNavLink" title="電子報">
+                                <img src="./assets/images/icon/edmDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">電子報</li>
+                            </a>
+                            <!-- 手機版的工具導覽 -->
+                            <ul class="toolNavMobile">
+                                <a href="" title="網站導覽">
+                                    <li>網站導覽</li>
+                                </a>
+                                <a href="" title="常見問題">
+                                    <li>常見問題</li>
+                                </a>
+                                <a href="./link.html" title="相關連結">
+                                    <li>相關連結</li>
+                                </a>
+                                <a href="" title="English版網站">
+                                    <li>English</li>
+                                </a>
+                            </ul>
+                            <!-- 手機版縮在主導覽選單內 fixedCenterPanel置中面板元件  -->
+                            <ul class="socialBox-Mobile">
+                                <a href="" target="_blank" title="FB連結-另開視窗">
+                                    <li><img src="./assets/images/icon/socialFB.svg" alt="FB連結圖"></li>
+                                </a>
+                                <a href="" target="_blank" title="line連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialLine.svg" alt="line連結圖"></li>
+                                </a>
+                                <a href="" target="_blank" title="youtube連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialYT.svg" alt="youtube連結圖"></li>
+                                </a>
+                                <a href="" target="_blank" title="instagram連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialIG.svg" alt="instagram連結圖"></li>
+                                </a>
+                                <a href="" target="_blank" title="教育雲連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialCloud.svg" alt="教育雲連結圖"></li>
+                                </a>
+                            </ul>
+                            <!-- /.手機版縮在主導覽選單內 fixedCenterPanel置中面板元件 手機版縮在主導覽選單內 -->
+                        </ul>
+                    </nav>
+                    <a href="" class="showMenu" title="手機選單按鈕">
+                        <i class="bi bi-list"></i>
+                    </a>
+                    <button id="loginBtn" class="mainNavLinkSpecial">
+                        <img src="./assets/images/icon/loginDark.svg" alt="">
+                        <p>登入</p>
+                    </button>
+                </div>
+            </div>
+            <!-- 登入黃面板 -->
+            <!-- 驗證碼：https://tricohobby.net/trico/2443/ -->
+            <div class="loginPanel">
+                <div class="container">
+                    <form>
+                        <div class="mb-2">
+                            <label for="account" class="form-label">代碼</label>
+                            <input type="email" class="form-control border-0" id="account" aria-describedby="emailHelp">
+                            <div class="form-link text-end">
+                                <a href="" title="忘記代碼">忘記代碼</a>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="password" class="form-label">密碼</label>
+                            <input type="password" class="form-control border-0" id="password">
+                            <div class="form-link text-end">
+                                <a href="" title="忘記密碼">忘記密碼</a>
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label for="verify" class="form-label">驗證碼</label>
+                            <div class="col-8"><input type="password" class="form-control border-0" id="password"></div>
+                            <div class="col-4 g-0"><img src="./assets/images/verify.png" alt=""></div>
+
+                        </div>
+                        <div class="mb-2">
+                            <div class="text-end">
+                                <img src="./assets/images/icon/refresh.svg" alt="更新識別碼">
+                                <img src="./assets/images/icon/sound.svg" alt="播放識別碼">
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary rounded-pill">登入</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!-- /.導覽列 -->
+    </div>
+    <main class="position-relative">
+        <a accesskey="C" href="#" title="中央內容區塊" class="accesskey_absolute"> ::: </a>
+        <!-- 虎災對話框元件  -->
+        <div class="hooSpeechWrap" id="hooSpeech">
+            <div class="speech-bubble">
+                <p>一起跟著<span class="highlight-yellow">虎災</span>學防災，<br>
+                    求生自保攏ㄟ哉</p>
+            </div>
+            <img src="./assets/images/wooIcon.svg" alt="防災教育吉祥物虎災">
+            <button class="btn closeBtn" id="hooClose" title="關閉虎災面板"></button>
+        </div>
+        <!-- /.虎災對話框元件 -->
+        <!-- 新聞區 -->
+        <section class="linearGradientLightgreen mt-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="newsPhotoGrid">
+                            <div class="mainPhoto">
+                                <div class="pos-img" data-size="3x4">
+                                    <img src="./assets/images/photo/photo001.jpg" loading="lazy" alt="此處帶入後台「圖片描述」">
+                                    <div class="itemTitle">
+                                        <p class="subTitle textRound ">2022.04.11</p>
+                                        <span class="subTitle">近期新聞</span>
+                                        <p class="title lineTwoString">防災教育精益求精 借鏡日本經驗更首次深入了解龜山島火山監測落實火山災害應變</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="secondPhoto">
+                                <div class="pos-img" data-size="16x9">
+                                    <img src="./assets/images/photo/photo001.jpg" loading="lazy" alt="此處帶入後台「圖片描述」">
+                                    <div class="itemTitle">
+                                        <p class="subTitle textRound ">2022.04.11</p>
+                                        <span class="subTitle">近期新聞</span>
+                                        <p class="title lineTwoString">防災教育精益求精 借鏡日本經驗更首次深入了解龜山島火山監測落實火山災害應變</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thirdPhoto">
+                                <div class="pos-img" data-size="16x9">
+                                    <img src="./assets/images/photo/photo001.jpg" loading="lazy" alt="此處帶入後台「圖片描述」">
+                                    <div class="itemTitle">
+                                        <p class="subTitle textRound ">2022.04.11</p>
+                                        <span class="subTitle">近期新聞</span>
+                                        <p class="title lineTwoString">防災教育精益求精 借鏡日本經驗更首次深入了解龜山島火山監測落實火山災害應變</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-4">
+                            <a href="" class="active potOutlinePrimary"></a>
+                            <a href="" class="potOutlinePrimary ms-3"></a>
+                            <a href="" class="potOutlinePrimary ms-3"></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="lineListComponent mt-md-9 mt-7">
+                    <a href="#" title="【競賽】「第七屆水保好好玩創意競賽」報名時間即日起至111年7月3日">
+                        <li class="d-flex">
+                            <div class="startPart"><span class="pe-6">2022.04.11</span><span>活動資訊</span></div>
+                            <div class="endPart">
+                                【競賽】「第七屆水保好好玩創意競賽」報名時間即日起至111年7月3日
+                            </div>
+                        </li>
+                    </a>
+                    <a href="#" title="【延期】教育部「110年防災教育工作坊助教增能研習」">
+                        <li class="d-flex">
+                            <div class="startPart"><span class="pe-6"> 2023-02-09</span><span>活動資訊</span></div>
+                            <div class="endPart">
+                                【延期】教育部「110年防災教育工作坊助教增能研習」
+                            </div>
+                        </li>
+                    </a>
+                    <a href="#" title="111年建構韌性防災校園與防災科技資源應用計畫 （輔導訪視建議名單）">
+                        <li class="d-flex">
+                            <div class="startPart"><span class="pe-6"> 2023-02-09</span><span>計畫公告</span></div>
+                            <div class="endPart">
+                                111年建構韌性防災校園與防災科技資源應用計畫 （輔導訪視建議名單）
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+                <div class="row">
+                    <div class="my-15 d-grid gap-2 col-6 col-md-3 mx-auto">
+                        <a href="#" class="btn btnMain rounded-pill min-w160" title="看更多消息">看更多消息<i
+                                class="bi bi-chevron-right ms-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.新聞區 -->
+        <!-- 防災遊學路線 -->
+        <section class="indexCampus">
+            <div>
+                <div class="text-center pt-15">
+                    <img src="./assets/images/indexSchool.svg" alt="">
+                    <div class="mt-3">
+                        <span class="titleBgstyle"><span>防</span></span>
+                        <span class="titleBgstyle"><span>災</span></span>
+                        <span class="titleBgstyle"><span>遊</span></span>
+                        <span class="titleBgstyle"><span>學</span></span>
+                        <span class="titleBgstyle"><span>路</span></span>
+                        <span class="titleBgstyle"><span>線</span></span>
+                        <p class="campusTitle">Feature Campus</p>
+                    </div>
+                    <div class="text-primary font-size-lg font-weight-sm letter-spacing-sm mt-7">
+                        <p>在這座島嶼上分布著多元的特色防災校園</p>
+                        <p>根據特色歸類出八大遊學路線</p>
+                        <p>跟著虎災導遊一起遊學去吧！</p>
+                    </div>
+                    <div id="animWrap" class="hooTaiwan">
+                        <div class="indexCampusPhotoWrap">
+                            <div class="position-relative">
+                                <img src="./assets/images/photo/campus02.jpg" class="indexCampusPhotoSmallOne"
+                                    alt="防災遊學情境圖1：一群學生圍著老師聽戶外教學說明">
+                                <img src="./assets/images/photo/campus01.jpg" class="indexCampusPhotoBig"
+                                    alt="防災遊學情境圖2：圖片中有一個圓形草屋">
+                            </div>
+                        </div>
+                        <div class="indexCampusPhotoWrap2">
+                            <div class="position-relative">
+                                <img src="./assets/images/photo/campus03.jpg" class="indexCampusPhotoSmallTwo"
+                                    alt="防災遊學情境圖3：一個小孩在溪上使用纜繩過溪">
+                                <img src="./assets/images/photo/campus04.jpg" class="indexCampusPhotoBig"
+                                    alt="防災遊學情境圖4：兩個小孩使用樹枝綁骨架">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btnCircleWrap"><a href="" class="btnCircle" title="探索遊學路線Go!">
+                            <span class="d-block w145">探索路線</span>
+                            <span class="d-block textRound">Go!</span>
+                        </a></div>
+                </div>
+            </div>
+        </section>
+        <!-- /.防災遊學路線 -->
+        <!-- 年度活動 -->
+        <section class="bgLightBlue waveMask">
+            <div class="colorTitleWrap pt-15">
+                <img src="./assets/images/icon/eventDark.svg" class="d-block mx-auto cube40" alt="">
+                <div class="colorTitle">Activity</div>
+                <p class="h4 font-weight-lg text-primary">年度活動</p>
+            </div>
+            <div class="container  pb-15">
+                <!-- 測試手機行橫向 -->
+                <!-- <div class="aaaWrap clearfix">
+                <a href="" class="aaa">
+                    <div>
+                        測試卡片1
+                    </div>
+                </a>
+                <a href="" class="aaa">
+                    <div>
+                        測試卡片2
+                    </div>
+                </a>
+                <a href="" class="aaa">
+                    <div>
+                        測試卡片3
+                    </div>
+                </a>
+                <a href="" class="aaa">
+                    <div>
+                        測試卡片4
+                    </div>
+                </a>
+                <a href="" class="aaa">
+                    <div>
+                        測試卡片5
+                    </div>
+                </a>
+            </div> -->
+                <div class="row row-cols-2 row-cols-md-4 g-5" id="customCard">
+                    <div class="col">
+                        <a href="#" title="教育部「第三屆防災青年國際領袖營」國內培訓活動">
+                            <div class="card h-100">
+                                <div class="cardImgWrap">
+                                    <img src="./assets/images/photo/activity01.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text mb-2"> 2022.04.11</h6>
+                                    <h5 class="card-title">教育部「第三屆防災青年國際領袖營」國內培訓活動</h5>
+                                    <p class="card-text">南投縣</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" title="2022防災教育國際實務經驗交流論壇">
+                            <div class="card h-100">
+                                <div class="cardImgWrap">
+                                    <img src="./assets/images/photo/activity02.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text mb-2"> 2022.04.11</h6>
+                                    <h5 class="card-title">2022防災教育國際實務經驗交流論壇</h5>
+                                    <p class="card-text">台北市</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" title="教育部「第三屆防災青年國際領袖營」國內培訓活動">
+                            <div class="card h-100">
+                                <div class="cardImgWrap">
+                                    <img src="./assets/images/photo/activity03.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text mb-2"> 2022.04.11</h6>
+                                    <h5 class="card-title">教育部「第三屆防災青年國際領袖營」國內培訓活動</h5>
+                                    <p class="card-text">南投縣</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" title="2022防災教育國際實務經驗交流論壇">
+                            <div class="card h-100">
+                                <div class="cardImgWrap">
+                                    <img src="./assets/images/photo/activity04.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text mb-2"> 2022.04.11</h6>
+                                    <h5 class="card-title">2022防災教育國際實務經驗交流論壇</h5>
+                                    <p class="card-text">台北市</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="#" title="教育部「第三屆防災青年國際領袖營」國內培訓活動">
+                            <div class="card h-100">
+                                <div class="cardImgWrap">
+                                    <img src="./assets/images/photo/activity01.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text mb-2"> 2022.04.11</h6>
+                                    <h5 class="card-title">教育部「第三屆防災青年國際領袖營」國內培訓活動</h5>
+                                    <p class="card-text">南投縣</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="" title="2022防災教育國際實務經驗交流論壇">
+                            <div class="card h-100">
+                                <div class="cardImgWrap">
+                                    <img src="./assets/images/photo/activity02.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text mb-2"> 2022.04.11</h6>
+                                    <h5 class="card-title">2022防災教育國際實務經驗交流論壇</h5>
+                                    <p class="card-text">台北市</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="" title="教育部「第三屆防災青年國際領袖營」國內培訓活動">
+                            <div class="card h-100">
+                                <div class="cardImgWrap">
+                                    <img src="./assets/images/photo/activity03.jpg" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text mb-2"> 2022.04.11</h6>
+                                    <h5 class="card-title">教育部「第三屆防災青年國際領袖營」國內培訓活動</h5>
+                                    <p class="card-text">南投縣</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="" title="2022防災教育國際實務經驗交流論壇">
+                            <div class="card h-100">
+                                <div class="cardImgWrap">
+                                    <img src="./assets/images/photo/activity04.png" class="card-img-top" alt="...">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text mb-2"> 2022.04.11</h6>
+                                    <h5 class="card-title">2022防災教育國際實務經驗交流論壇</h5>
+                                    <p class="card-text">台北市</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="my-15 d-grid gap-2 col-6 col-md-3 mx-auto">
+                        <a href="#" class="btn btnMain rounded-pill min-w160" title="看全部活動">看全部活動<i
+                                class="bi bi-chevron-right ms-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.年度活動 -->
+        <!-- 電子報 -->
+        <section class="bgLightOrange waveMask mt-9minus px-7 pb-15">
+            <div class="colorTitleWrap pt-15">
+                <img src="./assets/images/icon/edmDark.svg" class="d-block mx-auto cube40" alt="">
+                <div class="colorTitle">Newsletter</div>
+                <p class="h4 font-weight-lg text-primary">防災教育花路米</p>
+                <p class="font-size-lg font-weight-sm">虎災遊學團發現了一間書屋－「防災教育花路米」</p>
+                <p class="font-size-lg font-weight-sm">Follow me 一起學習防災知識吧！</p>
+            </div>
+            <div class="position-relative">
+                <div data-aos="fade-up" data-aos-anchor-placement="center-bottom"><img
+                        src="./assets/images/newsletterHouse.svg" class="ms-lg-15 ms-0" alt="防災教育電子報-背景插圖帳篷"></div>
+                <div data-aos-duration="5000" data-aos="fade-down" data-aos-easing="linear">
+                    <img src="./assets/images/newsletterPeople.svg" class="hooPeople" alt="防災教育電子報-虎災遊學團">
+                </div>
+            </div>
+            <div class="btnCircleWrap"><a href="" class="btnCircle" title="進入書屋Go!">
+                    <span class="d-block w145">進入書屋</span>
+                    <span class="d-block textRound">Go!</span>
+                </a></div>
+        </section>
+        <!-- /.電子報 -->
+        <!-- 教學資源 -->
+        <section class="bgLightGreen">
+            <div class="colorTitleWrap pt-15">
+                <img src="./assets/images/icon/materialDark.svg" class="d-block mx-auto cube40" alt="">
+                <div class="colorTitle">Teaching Material</div>
+                <p class="h4 font-weight-lg text-primary">教學資源</p>
+            </div>
+            <div class="container mt-15 g-0">
+                <div class="customTab">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                type="button" role="tab" aria-controls="教育部資源" aria-selected="true">教育部資源</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                type="button" role="tab" aria-controls="其他資源" aria-selected="false">其他資源</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row py-6" id="customDropdown">
+                                <div class="col text-center text-md-end">
+                                    <div class="dropdown">
+                                        <a class="btn btn-white dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                            依最新日期排序 </a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item" href="#">依點閱數高排序</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-2 row-cols-md-3 g-5" id="customCardTwo">
+                                <div class="col">
+                                    <a href="" title="第10屆防災校園縣市及學校評選活動手冊">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">2022.6.8</h6>
+                                                <h5 class="card-title lineThreeString">第10屆防災校園縣市及學校評選活動手冊</h5>
+                                                <p class="card-text"><img src="./assets/images/eduLogo.svg" alt=""><span
+                                                        class="d-inline-block ms-2">教育部</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="" title="第00屆防災校園縣市及學校評選活動手冊及學校評選活動手冊">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">2022.6.8</h6>
+                                                <h5 class="card-title lineThreeString">第00屆防災校園縣市及學校評選活動手冊及學校評選活動手冊</h5>
+                                                <p class="card-text"><img src="./assets/images/eduLogo.svg" alt=""><span
+                                                        class="d-inline-block ms-2">教育部</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="" title="第10屆防災校園縣市及學校評選活動手冊">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">2022.6.8</h6>
+                                                <h5 class="card-title lineThreeString">第10屆防災校園縣市及學校評選活動手冊</h5>
+                                                <p class="card-text"><img src="./assets/images/eduLogo.svg" alt=""><span
+                                                        class="d-inline-block ms-2">教育部</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="" title="第10屆防災校園縣市及學校評選活動手冊">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">2022.6.8</h6>
+                                                <h5 class="card-title lineThreeString">第10屆防災校園縣市及學校評選活動手冊</h5>
+                                                <p class="card-text"><img src="./assets/images/eduLogo.svg" alt=""><span
+                                                        class="d-inline-block ms-2">教育部</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="" title="第10屆防災校園縣市及學校評選活動手冊">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">2022.6.8</h6>
+                                                <h5 class="card-title lineThreeString">第10屆防災校園縣市及學校評選活動手冊</h5>
+                                                <p class="card-text"><img src="./assets/images/eduLogo.svg" alt=""><span
+                                                        class="d-inline-block ms-2">教育部</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="" title="第10屆防災校園縣市及學校評選活動手冊">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">2022.6.8</h6>
+                                                <h5 class="card-title lineThreeString">第10屆防災校園縣市及學校評選活動手冊</h5>
+                                                <p class="card-text"><img src="./assets/images/eduLogo.svg" alt=""><span
+                                                        class="d-inline-block ms-2">教育部</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="" title="第10屆防災校園縣市及學校評選活動手冊">
+                                        <div class="card h-100">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">2022.6.8</h6>
+                                                <h5 class="card-title">第10屆防災校園縣市及學校評選活動手冊</h5>
+                                                <p class="card-text"><img src="./assets/images/eduLogo.svg" alt=""><span
+                                                        class="d-inline-block ms-2">教育部</span></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">tab2</div>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="d-grid gap-2 col-6 col-md-3 mx-auto py-15">
+                        <a href="#" class="btn btnMain rounded-pill min-w160" title="看全部資源">看全部資源<i
+                                class="bi bi-chevron-right ms-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /.教學資源 -->
+    </main>
+    <!-- 頁尾 -->
+    <footer class="bg-light pt-7 pb-8 position-relative">
+        <a accesskey="C" href="#" title="頁尾網站資訊" class="accesskey_absolute"> ::: </a>
+        <div class="container">
+            <!-- <div class="d-flex justify-content-between border-bottom py-2"> -->
+            <div
+                class="d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-between justify-content-xl-between justify-content-xxl-between border-bottom py-2">
+                <ul class="footerUl">
+                    <a href="" title="網站導覽">
+                        <li>網站導覽</li>
+                    </a>
+                    <a href="" title="常見問題">
+                        <li>常見問題</li>
+                    </a>
+                    <a href="" title="相關連結">
+                        <li>相關連結</li>
+                    </a>
+                    <a href="" title="English英文版網站">
+                        <li class="textRound">English</li>
+                    </a>
+                </ul>
+                <span class="text-primary font-weight-sm p-2">瀏覽人次：<span class="textRound">1,017,614</span></span>
+            </div>
+            <!-- <div class="d-flex justify-content-between align-items-start pt-4"> -->
+
+            <div
+                class="d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-between justify-content-xl-between justify-content-xxl-between align-items-lg-start align-items-xl-start align-items-xxl-start pt-4">
+                <div class="footerInfo">
+                    <p>財團法人台灣地理資訊中心</p>
+                    <p><span class="textRound">E-mail：moeservices@tgic.org.tw</span>(防疫期間優先）</p>
+                    <p>聯絡電話：<span class="textRound">02-23931122 #661 / #867</span></p>
+                    <p>服務時間：週一至週五<span class="textRound">09:00~12:00、13:00~18:00</span></p>
+                    <p class="pt-7">版權教育部 <span class="textRound">Ministry of Education</span></p>
+                    <p>本網站建議使用<span class="textRound">Chrome、Firefox、Edge</span>瀏覽器及以<span
+                            class="textRound">1280ｘ800</span>以上解析度，以獲得最佳瀏覽體驗</p>
+                </div>
+                <img class="w-lg-25p w-md-25p w-sm-50p" src="./assets/images/accessibility.svg" alt="無障礙標籤">
+            </div>
+        </div>
+    </footer>
+    <!-- /.頁尾 -->
+    <!-- gotoTop元件 -->
+    <a href="#" id="c-go-top" class="c-go-top" title="回到上方按鈕">
+        <i class="bi bi-chevron-up h2"></i>
+    </a>
+    <!-- /.gotoTop -->
+    <!-- fixedCenterPanel置中面板元件 -->
+    <ul class="fixedCenterPanel">
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialFB.svg" alt="FB連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialLine.svg" alt="line連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialYT.svg" alt="youtube連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialIG.svg" alt="instagram連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialCloud.svg" alt="教育雲連結圖"></li>
+        </a>
+    </ul>
+    <!-- /.fixedCenterPanel置中面板元件 -->
+
+
+
+    <!-- aos動態js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- wootaiwan lottie動畫 -->
+    <script src="/script.js"></script>
+    <script>
+        // ＝＝主導覽RWD選單
+        $(document).ready(function () {
+            $('.showMenu').on('click', function (e) {
+                e.preventDefault();
+                $('.mainNav').toggleClass('d-flex');
+            });
+        });
+
+
+        //＝＝sticky Navbar 滑動固定主導覽在上方 
+        window.onscroll = function () {
+            fixMainmenuFunction()
+        };
+        // 設主導覽
+        var navbar = document.querySelector(".mainNavWrap");
+        // 設sticky
+        var sticky = navbar.offsetTop;
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function fixMainmenuFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        // ＝＝登入開啟關閉面板
+        // 點擊畫面div以外的任何地方就隱藏DIV
+        $("body").click(function () {
+            $(".loginPanel").hide();
+            // $(".mainNavInnerWrap").hide();
+        });
+        // 點擊div時、不向上層冒泡。
+        $(".loginPanel").click(function (e) {
+            e.stopPropagation();
+        });
+        // 點擊按鈕時顯示或隱藏div
+        $("#loginBtn").click(function (e) {
+            e.stopPropagation();
+            $(".loginPanel").toggle();
+        });
+
+        // TODO 登入黃面板判斷有無toolnav  mainNav＋.sticky clss來設定上方高度
+
+        // ＝＝aos初始化
+        AOS.init();
+        // ＝＝wooIcon動作點x關閉
+        let hooClose = document.getElementById("hooClose");
+        let hooSpeech = document.getElementById("hooSpeech");
+        hooClose.addEventListener("click", function () {
+            hooSpeech.style.display = "none";
+        }, false);
+        // ＝＝gotoTop元件-回到上方功能
+        $(function () {
+            // Amount of scrolling before button is shown/hidden.
+            var offset = 100;
+
+            // Fade duration
+            var duration = 500;
+
+            // Toggle view of button when scrolling.
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > offset) {
+                    $('#c-go-top').fadeIn(duration);
+                } else {
+                    $('#c-go-top').fadeOut(duration);
+                }
+            });
+
+            // Scroll to top when button is clicked.
+            $('#c-go-top').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, duration);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

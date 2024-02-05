@@ -1,0 +1,15 @@
+// Required
+@import "./bootstrap/functions"; // 必要的方法
+@import "./variable"; // 自行定義的變數路徑
+@import "./bootstrap/mixins";
+@import "./bootstrap/bootstrap.scss"; // Bootstrap 完整原始碼
+//custom 下列為客製化scss
+@import "variable";
+@import "bootstrap/bootstrap.scss";
+@import "mixin";
+@import "site";
+@import "component";
+@import "utilities";
+@import "animation";
+@import "index";
+// @import "combo"; //無障礙需用到的css

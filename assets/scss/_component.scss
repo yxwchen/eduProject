@@ -1,0 +1,1519 @@
+// 上方導覽列
+
+// 工具導覽
+.toolNav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: $green;
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    padding: 0 20px;
+
+    @include device-md {
+        display: none;
+    }
+
+    a {
+        padding: 6px 20px;
+    }
+
+}
+
+.toolNavMobile {
+    display: none;
+
+    @include device-xl {
+        border-top: 1px solid $blue-100;
+        border-bottom: 1px solid $blue-100;
+        display: flex;
+        padding: 32px 16px;
+        flex-wrap: wrap;
+    }
+
+    a {
+        display: block;
+        margin-right: 40px;
+        min-width: 80px;
+
+        @include device-sm {
+            margin-right: 16px;
+        }
+    }
+}
+
+// header {
+//     // background-color: #fcc;
+//     // z-index: 9999;
+//     // margin: 0 40px;
+//     // width: calc(100% - 80px);
+
+//     // @include device-md {
+//     //     border-radius: 0 0 20px 0;
+//     //     width: 100%;
+//     // }
+// }
+
+// 主導覽
+.mainNavWrap {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: $white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 1px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 72px;
+
+    @include device-xl {
+        position: relative;
+    }
+
+    @include device-md {
+        border-radius: 0 0 20px 0;
+        width: 100%;
+    }
+}
+
+.mainNavInnerWrap {
+    // display: flex;
+
+    @include device-xl {
+        //<1200隱藏，透過js打開
+        // display: none;
+        // flex-direction: column;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        z-index: 9999;
+        background: $white;
+        width: 100vw;
+        padding: 0 20px;
+    }
+
+    // @include device-md {
+    //     top: 80px;
+    // }
+}
+
+.mainNav {
+    display: flex;
+
+    @include device-xl {
+        //<1200隱藏，透過js打開
+        display: none;
+        flex-direction: column;
+        // position: absolute;
+        // top: 80px;
+        // left: 0;
+        // z-index: 9999;
+        // background: $white;
+        // width: 100vw;
+        // padding: 0 20px;
+    }
+
+    @include device-md {
+
+        // top: 80px;
+
+    }
+
+    .mainNavLink {
+        padding: 10px 32px;
+        text-align: center;
+        color: $primary;
+        border-left: 1px solid $blue-100;
+
+        @include device-xxl {
+            padding: 10px 16px;
+        }
+
+        @include device-xl {
+            text-align: start;
+            display: flex;
+            border-left: none;
+        }
+
+        &:hover {
+            border-bottom: 4px solid $blue;
+
+            @include device-xl {
+                border-bottom: none;
+                color: $blue-400;
+            }
+        }
+
+        &.active {
+            border-bottom: 4px solid $blue;
+
+            @include device-xl {
+                border-bottom: 0;
+                background-color: $blue-100;
+                color: $primary;
+            }
+        }
+    }
+}
+
+.showMenu {
+    display: none;
+    // background-color: #acf;
+
+    @include device-xl {
+        display: block;
+        padding: 10px 32px;
+        text-align: center;
+        font-size: 36px;
+        border-radius: 0 0 20px 0;
+    }
+
+    @include device-sm {
+        padding: 10px 20px;
+        font-size: 32px;
+    }
+}
+
+
+.mainNavLinkSpecial {
+    display: block;
+    padding: 10px 32px;
+    text-align: center;
+
+    background-color: $yellow;
+    border: none;
+    border-radius: 0 0 20px 0;
+
+    &:hover {
+        background-color: $yellow-300;
+        border-bottom: none;
+    }
+
+    @include device-md {
+        display: none;
+    }
+}
+
+// 登入黃色面板
+.loginPanel {
+    display: none;
+
+    position: fixed;
+    right: 4px;
+    top: 118px;
+    z-index: 10;
+
+    background-color: $yellow;
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+}
+
+
+
+//主導覽固定在上方的class
+// .sticky {
+//     position: fixed;
+//     top: 0;
+// }
+/* This class is added on scroll */
+.sticky {
+    position: fixed;
+    top: 0;
+    // height: 70px;
+    z-index: 10000;
+    width: 100%;
+}
+
+// logo區塊
+.logo {
+    h1 {
+        width: 264px;
+        height: 52px;
+        background: url(../images/logo.svg)center center no-repeat;
+        margin-bottom: 0;
+
+        @include device-sm {
+            width: 200px;
+            height: 40px;
+            background: url(../images/logo_s.svg)center center no-repeat;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            position: relative;
+            text-indent: -119988px;
+            overflow: hidden;
+            text-align: left;
+        }
+    }
+}
+
+
+// 測試首頁新聞圖組
+%responsive-image {
+    display: flex;
+    width: 100%;
+    flex: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.pos-img {
+    position: relative;
+    width: 100%;
+
+    img {
+        border-radius: 16px;
+    }
+
+    &[data-size="1x1"] {
+        padding-bottom: percentage(1 / 1);
+    }
+
+    &[data-size="3x4"] {
+        padding-bottom: percentage(3 / 4);
+    }
+
+    &[data-size="2x1"] {
+        padding-bottom: percentage(2 / 1);
+    }
+
+    &[data-size="16x9"] {
+        padding-bottom: percentage(9 / 16);
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+.asp-img {
+    position: relative;
+    width: 100%;
+
+    &[data-size="1x1"] {
+        aspect-ratio: 1 / 1;
+    }
+
+    &[data-size="3x4"] {
+        aspect-ratio: 4 / 3;
+    }
+
+    &[data-size="2x1"] {
+        aspect-ratio: 1 / 2;
+    }
+
+    &[data-size="16x9"] {
+        aspect-ratio: 16 / 9;
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+.bgCover-img {
+    display: flex;
+    width: 100%;
+    flex: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &[data-size="1x1"] {
+        padding-bottom: percentage(1 / 1);
+    }
+
+    &[data-size="3x4"] {
+        padding-bottom: percentage(3 / 4);
+    }
+
+    &[data-size="2x1"] {
+        padding-bottom: percentage(2 / 1);
+    }
+
+    &[data-size="16x9"] {
+        padding-bottom: percentage(9 / 16);
+    }
+}
+
+// H:1, W:1
+.image {
+    @extend %responsive-image;
+
+    &._1x1 {
+        padding-bottom: percentage(1 / 1);
+    }
+
+    &._3x4 {
+        padding-bottom: percentage(3 / 4);
+    }
+
+    &._2x1 {
+        padding-bottom: percentage(2 / 1);
+    }
+
+    &._16x9 {
+        padding-bottom: percentage(9 / 16);
+    }
+}
+
+// 測試 年度卡片活動重寫
+// .aaaWrap {
+//     background-color: #faa;
+//     overflow-x: auto;
+//     white-space: nowrap;
+//     width: 100%;
+// }
+
+// .aaa {
+//     display: block;
+//     background-color: #cfa;
+//     width: 255px;
+//     height: 500px;
+//     border: 1px solid red;
+
+
+//     margin-right: 30px;
+//     float: left;
+// }
+
+// 客製化卡片元件（首頁年度活動卡片）
+#customCard {
+    .card {
+        border-radius: 16px;
+        border: none;
+
+    }
+
+    .cardImgWrap {
+        width: 100%;
+        height: 15vw;
+        background: url(../images/bg/patternBg.png)repeat;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+
+        @include device-md {
+            height: 25vw;
+        }
+
+        @include device-sm {
+            height: 50vw;
+        }
+    }
+
+    .card-img-top {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        width: 100%;
+        height: 15vw;
+        object-fit: contain;
+
+        @include device-md {
+            height: 25vw;
+        }
+
+        @include device-sm {
+            height: 50vw;
+        }
+    }
+
+    .card-title {
+
+        @include device-sm {
+            font-size: 1.125rem;
+        }
+    }
+
+    .card-text {
+        font-weight: $font-weight-light;
+        font-size: $font-size-base;
+    }
+
+    // .card-img {
+    //     width: 500px;
+    //     height: 350px;
+    //     margin: 50px;
+    //     border: 2px solid;
+    //     background-color: #faa;
+    // }
+
+    // .card-img img {
+    //     object-fit: contain;
+    //     width: 500px;
+    //     height: 350px;
+    // }
+
+}
+
+// 客製化卡片元件2 (防災遊學路線卡）
+.flip {
+    position: relative;
+
+    .front,
+    .back {
+        display: block;
+        transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+        transition-duration: .8s;
+        transition-property: transform, opacity;
+    }
+
+    .front {
+        transform: rotateY(0deg);
+
+        background-color: $lightGreen;
+        color: $primary;
+
+
+        .inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            padding-bottom: 40px;
+        }
+
+        .cardTitle {
+            font-size: 1.5rem;
+            font-weight: $font-weight-semibold;
+            text-align: center;
+            padding: 36px 0 20px 0;
+        }
+
+    }
+
+    .back {
+        position: absolute;
+        opacity: 0;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        transform: rotateY(-180deg);
+
+        padding: 40px 32px 60px 32px;
+        background-color: $primary;
+        background: url(../images/pattern.png) repeat;
+        color: $white;
+
+        .cardTitle {
+            font-size: 1.5rem;
+            font-weight: $font-weight-semibold;
+            text-align: center;
+        }
+
+        .cardText {
+            margin: 20px 0;
+            font-size: $font-size-lg;
+            font-weight: $font-weight-semibold;
+        }
+
+        .cardTag {
+            padding: 4px 12px;
+            border-radius: 50rem;
+            background-color: $yellow;
+            color: $primary;
+        }
+    }
+
+    // .front {
+    //     padding: 40px 32px 60px 32px;
+    //     background-color: $primary;
+    //     background: url(../images/pattern.png) repeat;
+    //     color: $white;
+    //     transform: rotateY(0deg);
+
+
+
+    //     .cardTitle {
+    //         font-size: 1.5rem;
+    //         font-weight: $font-weight-semibold;
+    //         text-align: center;
+    //     }
+
+    //     .cardText {
+    //         margin: 20px 0;
+    //         font-size: $font-size-lg;
+    //         font-weight: $font-weight-semibold;
+    //     }
+
+    //     .cardTag {
+    //         padding: 4px 12px;
+    //         border-radius: 50rem;
+    //         background-color: $yellow;
+    //         color: $primary;
+    //     }
+    // }
+
+    // .back {
+    //     // padding-top: 36px;
+    //     background-color: $lightGreen;
+    //     color: $primary;
+    //     position: absolute;
+    //     opacity: 0;
+    //     top: 0px;
+    //     left: 0px;
+    //     width: 100%;
+    //     height: 100%;
+    //     transform: rotateY(-180deg);
+
+    //     .backInner {
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: flex-start;
+    //         align-items: center;
+
+    //         position: absolute;
+    //         width: 100%;
+    //     }
+
+    //     .cardTitle {
+    //         font-size: 1.5rem;
+    //         font-weight: $font-weight-semibold;
+    //         text-align: center;
+    //         padding: 36px 0 20px 0;
+    //     }
+
+    // }
+
+    &:hover {
+        .front {
+            transform: rotateY(180deg);
+        }
+
+        .back {
+            opacity: 1;
+            transform: rotateY(0deg);
+        }
+    }
+}
+
+.filpTitleWrap {
+    display: flex;
+    align-items: stretch;
+
+    @include device-lg {
+        order: -1;
+    }
+}
+
+.filpTitle {
+    width: 100%;
+    height: inherit;
+    background-color: $gray-100;
+    // background: url(../images/filpTitleBg.svg);
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include device-lg {
+        padding: 40px;
+    }
+
+    @include device-sm {
+        padding: 20px;
+    }
+}
+
+// 客製化卡片元件3 （電子報卡片樣式-背景透明、圖片滿版）
+#customCard3 {
+    a {
+        color: $primary;
+
+        &:hover {
+            color: $blue-400;
+        }
+    }
+
+    .card {
+        background: transparent;
+        border: none;
+    }
+
+    .card .card-body {
+        padding: 0px;
+    }
+
+    .card-img-top {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        width: 255px;
+        height: 360px;
+
+        @include device-xl {
+            width: 202px;
+            height: 285px;
+        }
+
+        @include device-lg {
+            width: 156px;
+            height: 220px;
+        }
+
+        // @include device-md {
+        //     width: 180px;
+        //     height: 254px;
+        // }
+
+        // @include device-sm {
+        //     width: 156px;
+        //     height: 220px;
+        // }
+
+        @include device-xs {
+            width: 135px;
+            height: 190px;
+        }
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: $font-weight-semibold;
+        padding: 12px 0;
+    }
+
+    .card-text {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-light;
+    }
+}
+
+// 客製化tab元件（首頁教學資源頁籤）
+// .customTab {
+//     // position: relative;
+// }
+
+.customTab .nav-tabs {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+.customTab .nav-tabs .nav-link {
+    margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
+    background: $primary;
+    color: $white;
+    border: none;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 20px 180px;
+    font-size: $h4-font-size;
+
+    @include device-xxl {
+        padding: 20px 140px;
+    }
+
+    @include device-xl {
+        padding: 20px 120px;
+    }
+
+    @include device-lg {
+        padding: 20px 40px;
+    }
+
+    @include device-sm {
+        padding: 20px;
+        font-size: $h6-font-size;
+    }
+}
+
+.customTab .nav-tabs .nav-link.active {
+    background: $lightGreen500;
+    color: $primary;
+}
+
+.customTab .nav-tabs {
+    border-bottom: none;
+}
+
+.customTab .tab-content {
+    background: $lightGreen500;
+    border-radius: 32px;
+    min-height: 500px;
+    padding: 0 60px 60px 60px;
+
+    @include device-sm {
+        border-radius: 0;
+    }
+}
+
+// 客製化卡片元件2（首頁教學資源卡片 無圖）
+#customCardTwo {
+    .card {
+        border-radius: 20px;
+        border: none;
+
+    }
+}
+
+// 客製化卡片元件3（特色防災校園卡片）
+#customCardThree {
+    .card {
+        border-radius: 16px;
+        border: none;
+        // background-color: #faf;
+        width: 100%; //因縮小成手機版，當標題長度不一會出現寬度不夠，而設定
+    }
+
+    .card-body {
+        padding: 0;
+    }
+
+    .card-img-top {
+        border-radius: 16px;
+        width: 100%;
+        height: 25vh;
+        object-fit: cover;
+
+        @include device-xl {
+            height: 20vh;
+        }
+
+        @include device-sm {
+            height: 25vh;
+        }
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        color: $primary;
+        line-height: 2.25rem;
+        border-bottom: 2px dotted $primary;
+        padding: 12px 0;
+
+        @include device-sm {
+            font-size: 1.125rem;
+            border-bottom: none;
+        }
+    }
+
+    .card-text {
+        font-weight: $font-weight-light;
+        font-size: $font-size-base;
+        padding: 12px 0;
+    }
+}
+
+// 客製化下拉選單
+#customDropdown .dropdown-menu {
+    border: none;
+}
+
+// gotoTop元件
+// https://codepen.io/mariordev/pen/PNmZzG
+.c-go-top {
+    background-color: $white;
+    padding: 0px 6px 2px 6px;
+    bottom: 20px;
+    right: 2%;
+    display: none;
+    position: fixed;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+// fixedCenterPanel 社群連結元件-置中面板(父元素設定position-relative)
+.fixedCenterPanel {
+    width: 40px;
+    position: fixed;
+    top: 40%;
+    right: 0;
+    border-radius: 8px 0 0 8px;
+    background-color: $white;
+    box-shadow: 1px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    @include device-sm {
+        display: none;
+    }
+}
+
+// 社群連結元件-手機版額外寫一個獨立htmlcss用
+.socialBox-Mobile {
+    display: none;
+
+    @include device-md {
+        display: flex;
+        justify-content: space-around;
+        padding: 16px;
+    }
+}
+
+
+// 麵包屑元件-其他背景色不一樣的用.bg-xxx放在html覆蓋
+#breadcrumbCustom .breadcrumb-item {
+    margin-bottom: 8px;
+}
+
+#breadcrumbCustom .breadcrumb-item a {
+    background-color: $white;
+    border-radius: 50rem;
+    padding: 2px 8px;
+}
+
+#breadcrumbCustom .breadcrumb-item+.active {
+    color: $primary;
+    background-color: transparent;
+    font-weight: $font-weight-light;
+}
+
+#breadcrumbCustom .breadcrumb-item::before {
+    color: $primary;
+}
+
+// 客製化表單樣式
+.form-label {
+    color: $primary;
+    font-weight: $font-weight-semibold;
+}
+
+.form-link {
+    color: $primary;
+    font-weight: $font-weight-light;
+}
+
+// bs  input select  客製化
+.form-control,
+.form-select {
+    border: 1px solid $primary;
+}
+
+// .form-control-noline{
+//     border: none;
+// }
+
+// 檢索元件
+.pageSearchPanel {
+    font-size: $font-size-lg;
+
+    .searchTitle {
+        background-color: $primary;
+        color: $white;
+        text-align: center;
+        padding: 20px 0;
+        border-radius: 20px 20px 0 0;
+        cursor: pointer;
+    }
+
+    // .searchTitleIcon {
+    //     // padding-left: 20px;
+    //     // transition: all .35s;
+    // }
+
+    // .searchTitleIcon {
+    //     background-color: $white;
+    //     border-radius: 50rem;
+    //     width: 32px;
+    //     height: 32px;
+    // }
+
+    // .searchTitleIcon::after {
+    //     content: '\005e';
+    //     color: $primary;
+    //     padding: 6px;
+    // }
+
+    .searchBox {
+        color: $primary;
+        background-color: $white;
+        padding: 20px 40px 0 40px;
+        border-radius: 0 0 20px 20px;
+
+        .searchLineWrap {
+            border-bottom: 2px dashed $lightGreen;
+            padding: 12px;
+        }
+
+        .searchLineCheckBox {
+            @include device-sm {
+                display: none;
+            }
+        }
+
+        // 檢索十字icon(手機顯示 桌機隱藏)
+        .searchLineTitleCross {
+            display: none;
+            padding-bottom: 4px;
+
+            @include device-sm {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+// 檢索結果面板
+// .pageSearchResult {
+//     background-color: #caf;
+// }
+
+
+// 圓形動態按鈕
+.btnCircleWrap {
+    width: 145px;
+    height: 145px;
+    margin: 20px auto;
+    text-align: center;
+
+    @include device-sm {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.btnCircleWrap a {
+    // display: block;
+    background-color: $yellow;
+    border-radius: 50%;
+    width: 145px;
+    height: 145px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: 'Noto Sans TC', 'M+PLUS+Rounded+1c';
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+
+    @include device-sm {
+        width: 100px;
+        height: 100px;
+        font-size: $font-size-base;
+        align-items: center;
+    }
+}
+
+.btnCircle {
+    border-radius: 50%;
+    width: 144px;
+    height: 144px;
+    opacity: 1;
+    transition: 0.3s;
+    cursor: pointer;
+
+    @include device-sm {
+        width: 99px;
+        height: 99px;
+    }
+}
+
+.btnCircleWrap a::before {
+    content: "";
+    border: 2px solid $yellow;
+    border-radius: 50%;
+    -webkit-animation-name: loopzoom;
+    animation-name: loopzoom;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+// 圓形動態按鈕：防災遊學路線 tiger位置
+.tigerBtn {
+    position: absolute;
+    top: -100px;
+    left: 2px;
+    width: 100%;
+
+    @include device-sm {
+        top: -70px;
+    }
+}
+
+.tigerBtnWrap {
+    position: absolute;
+    right: 50px;
+
+    @include device-sm {
+        right: 24px;
+    }
+}
+
+// 全站標籤用
+// 綠底標籤
+.customTagOne {
+    display: inline-block;
+    color: $primary;
+    font-weight: $font-weight-semibold;
+    padding: 2px 4px;
+    background-color: $lightGreen;
+    margin-right: 8px;
+    border-radius: 50rem;
+}
+
+// 框線標籤
+.customTagTwo {
+    display: inline-block;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-light;
+    border: 1px solid $primary;
+    border-radius: 8px;
+    padding: 0 8px;
+    margin-right: 8px;
+    margin-top: 4px;
+
+    @include device-sm {
+        font-size: $font-size-base;
+    }
+}
+
+
+// 內頁資訊區
+.pageData {
+    color: $primary;
+    padding-top: 40px;
+
+    .pageSubTitle {
+        display: flex;
+        justify-content: space-between;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-light;
+
+        @include device-sm {
+            font-size: $font-size-base;
+        }
+    }
+
+    .pageTitle {
+        font-size: 1.5rem;
+        font-weight: $font-weight-semibold;
+        border-bottom: 2px dotted $primary;
+        padding: 12px 0;
+
+        @include device-sm {
+            font-size: $font-size-base*1.125;
+        }
+    }
+
+    .pageTag {
+        display: flex;
+        align-items: flex-start;
+
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        padding-left: 8px;
+        margin-top: 12px;
+
+        @include device-sm {
+            font-size: $font-size-base;
+        }
+
+        // span {
+        //     display: inline-block;
+        //     font-size: $font-size-lg;
+        //     font-weight: $font-weight-light;
+        //     border: 1px solid $primary;
+        //     border-radius: 8px;
+        //     padding: 0 8px;
+        //     margin-right: 8px;
+        //     margin-top: 4px;
+
+        //     @include device-sm {
+        //         font-size: $font-size-base;
+        //     }
+        // }
+    }
+
+    .pageContent {
+        padding-top: 60px;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-light;
+
+        @include device-sm {
+            padding-top: 40px;
+            font-size: $font-size-base;
+        }
+    }
+
+    // 內頁表格樣式區
+    .pageLine {
+        border-top: 1px solid $white;
+        border-bottom: 1px solid $white;
+        background-color: $gray-100;
+        display: flex;
+        align-items: center;
+    }
+
+    .pageLineTitle {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        text-align: center;
+        min-width: 120px;
+        padding: 8px 0;
+
+        @include device-sm {
+            font-size: $font-size-base;
+        }
+    }
+
+    .pageLineInfo {
+        width: 100%;
+        padding: 8px 0;
+
+
+        .infoText {
+            border-left: 1px solid $white;
+            padding-left: 40px;
+            padding-right: 12px;
+
+        }
+    }
+}
+
+.word-break-all {
+    word-break: break-all;
+}
+
+// 設定video的寬
+.pageVideo iframe {
+    width: 560px;
+    height: 315px;
+    border-radius: 16px;
+
+    @include device-md {
+        width: 480px;
+        height: 270px;
+    }
+
+    @include device-sm {
+        width: 304px;
+        height: 171px;
+    }
+}
+
+.iconTitle {
+    font-size: $font-size-lg;
+    color: $primary;
+    padding-bottom: 12px;
+}
+
+// slick客製化圖片
+// https://medium.com/anna-hsaio-%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC%E8%A8%98/npm%E5%B0%8F%E5%B7%A5%E5%85%B7-slick%E5%A5%97%E7%94%A8%E8%88%87%E5%B8%B8%E7%94%A8%E8%A8%AD%E5%AE%9A-2422ec9a46c1
+.slick-slide img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    /* 額外確保圖片縮放時會有最好的效果 */
+    object-fit: contain; //整張放入框內
+    background: url(../images/bg/patternBg.png) repeat; //設一個背景圖讓視覺平衡
+    border-radius: 16px;
+}
+
+/* the slides */
+//slick元件增加間距
+.slick-slide {
+    margin: 0 10px;
+}
+
+/* the parent */
+//slick元件增加間距
+.slick-list {
+    margin: 0 -10px;
+}
+
+//slick圓點樣式
+.pageCarousel .slick-dots li.slick-active button:before {
+    color: $primary;
+    opacity: 1;
+}
+
+// 遊學島背景組
+.bgIsland {
+    width: 100%;
+    height: 527px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include device-lg {
+        height: 480px;
+    }
+
+    @include device-md {
+        height: 420px;
+    }
+}
+
+// 背景要設透明度的解決方式，設僞元素 + Position｜文字層也要加position-relative不然文字層會透明
+// https://ithelp.ithome.com.tw/articles/10290585?sc=iThelpR
+
+.island01 {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        background-size: cover;
+        background-image: url(../images/bg/islandBg.png);
+        height: 527px;
+        width: 100%;
+        opacity: 0.5;
+        position: absolute;
+        /* 偏移值皆設為 0，讓僞元素跟父元素一樣大小 */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        @include device-lg {
+            height: 480px;
+        }
+
+        @include device-md {
+            height: 420px;
+        }
+    }
+}
+
+
+// 遊學島內頁標題樣式
+.islandTitle {
+    font-size: 3rem; //48px
+    margin: 32px 0 48px 0;
+
+    @include device-sm {
+        font-size: 2rem; //32px
+    }
+}
+
+.islandText {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+
+    @include device-sm {
+        font-size: 17px;
+    }
+}
+
+// 防災遊學路線置底元件
+.islandNavWrap {
+    background-color: $lightGreen;
+    color: $primary;
+    text-align: center;
+    padding: 12px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+
+}
+
+.islandNavUl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .islandNavLink {
+        margin: 4px 8px 4px 0;
+        display: inline-block;
+        min-width: 118px;
+        color: $white;
+        background: $primary;
+        font-size: 18px;
+        font-weight: $font-weight-semibold;
+        border-radius: 50rem;
+        padding: 0 8px;
+
+        &.active {
+            background-color: $white;
+            color: $primary;
+            border: 1px solid $primary;
+        }
+    }
+}
+
+//分成兩部分元件(左圖右文)：防災校園-學校課程元件、最新消息列表元件 
+.twoParts {
+    color: $primary;
+    font-size: $font-size-lg;
+}
+
+.twoPartsTitle {
+    background-color: $lightGreen;
+    font-weight: $font-weight-semibold;
+    padding: 8px 0;
+    border-radius: 8px;
+    text-align: center;
+
+    @include device-lg {
+        margin-top: 20px;
+    }
+}
+
+.twoPartsText {
+    margin: 20px 0;
+    font-weight: $font-weight-light;
+    overflow-y: auto;
+    height: 180px;
+}
+
+.twoPartsTag {
+    border-top: 1px dotted $green;
+    padding-top: 20px;
+    position: absolute;
+    bottom: 0;
+
+    @include device-lg {
+        position: static;
+    }
+}
+
+.twoPartsImg {
+    border-radius: 16px;
+    width: 540px;
+    height: 360px;
+    object-fit: cover;
+
+    @include device-lg {
+        width: 100%;
+        height: 40vh;
+    }
+
+    @include device-md {
+        width: 100%;
+        height: 30vh;
+    }
+}
+
+// 最新消息tab客製化
+.customTabTwoWrap {
+    border-bottom: 2px solid $primary;
+    position: relative;
+}
+
+.customTabTwo {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    font-size: 1.5rem;
+
+    @include device-lg {
+        font-size: $font-size-lg;
+    }
+
+    @include device-md {
+        font-size: 18px;
+    }
+
+    // .nav-tabs {
+    //     // border-bottom: 2px solid $primary;
+    //     margin: 0 12px;
+    // }
+    .nav-tabs {
+        border: none;
+    }
+
+    .nav-item {
+        margin: 0 10px;
+
+        @include device-sm {
+            margin: 0 4px;
+        }
+    }
+
+    .nav-tabs .nav-link {
+        color: $white;
+        background-color: $primary;
+        padding: 20px 40px;
+
+        @include device-xl {
+            padding: 12px 20px;
+        }
+
+        // @include device-lg {
+        //     padding: 12px 20px;
+        // }
+
+        @include device-sm {
+            padding: 8px;
+        }
+    }
+
+
+    .nav-tabs .nav-link.active {
+        color: $primary;
+        background-color: $gray-100;
+        border: 2px solid $primary;
+        border-bottom: 0;
+    }
+}
+
+// 全站圖片有背影固定的樣式，避免object-fit:cover只能顯示圖中間，海報跟bn會被截斷
+.imgBgStyle {
+    width: 100%;
+    height: 22vh;
+    background: $gray-200;
+    border-radius: 20px;
+
+    img {
+        border-radius: 20px;
+        width: 100%;
+        height: 22vh;
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+}
+
+// 單行消息元件-首頁單行新聞、最新消息頁活動資訊列表
+.lineListComponent {
+    font-size: $font-size-lg;
+
+    @include device-md {
+        font-size: 18px;
+    }
+
+    li {
+        display: flex;
+        border-bottom: 1px solid $blue-100;
+        padding: 16px 0;
+
+        @include device-md {
+            flex-direction: column;
+        }
+    }
+
+    .startPart {
+        min-width: 250px;
+        font-weight: $font-weight-light;
+    }
+
+    .endPart {
+        // background-color: red;
+        padding-left: 30px;
+
+        @include device-md {
+            padding-left: 0;
+        }
+    }
+}
+
+// 電子報頁-title圖片設定
+.newsletterImgTitle {
+    position: absolute;
+    width: 25%;
+    left: 10%;
+    bottom: 15%;
+}

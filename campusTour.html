@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="Zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="教導全國學生有關防災教育資訊的網站" />
+    <title>教育部防災教育資訊網前台</title>
+    <link rel="stylesheet" href="./assets/scss/all.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/facicon.ico" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js" type="text/javascript"></script>
+    <!-- bs js (自己放的js檔會出錯～先用cdn) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="position-relative">
+    <div>
+        <!-- 導覽列 -->
+        <header class="position-relative container-fluid gx-0">
+            <ul class="toolNav">
+                <a href="./sitemap.html" title="網站導覽">
+                    <li>網站導覽</li>
+                </a>
+                <a href="./qa.html" title="常見問題">
+                    <li>常見問題</li>
+                </a>
+                <a href="" title="相關連結">
+                    <li>相關連結</li>
+                </a>
+                <a href="" title="English版網站">
+                    <li>English</li>
+                </a>
+            </ul>
+            <div class="mainNavWrap">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <a accesskey="U" href="#" title="上方功能區塊" class="accesskey"> ::: </a>
+                    </div>
+                    <div class="logo">
+                        <h1>
+                            <a tabindex="1" href="./index.html" title="防災教育資訊網">防災教育資訊網</a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <nav class="mainNavInnerWrap">
+                        <ul class="mainNav">
+                            <a href="./introduction.html" class="mainNavLink" title="計畫簡介">
+                                <img src="./assets/images/icon/aboutDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">計畫簡介</li>
+                            </a>
+                            <a href="./teachingMaterial.html" class="mainNavLink" title="教學資源">
+                                <img src="./assets/images/icon/materialDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">教學資源</li>
+                            </a>
+                            <a href="./news.html" class="mainNavLink" title="最新消息">
+                                <img src="./assets/images/icon/newsDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">最新消息</li>
+                            </a>
+                            <a href="./activity.html" class="mainNavLink" title="年度活動">
+                                <img src="./assets/images/icon/eventDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">年度活動</li>
+                            </a>
+                            <a href="./featureCampus.html" class="mainNavLink active" title="特色防災校園">
+                                <img src="./assets/images/icon/campusDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">特色防災校園</li>
+                            </a>
+                            <a href="./newsletter.html" class="mainNavLink" title="電子報">
+                                <img src="./assets/images/icon/edmDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">電子報</li>
+                            </a>
+                            <!-- 手機版的工具導覽 -->
+                            <ul class="toolNavMobile">
+                                <a href="" title="網站導覽">
+                                    <li>網站導覽</li>
+                                </a>
+                                <a href="" title="常見問題">
+                                    <li>常見問題</li>
+                                </a>
+                                <a href="" title="相關連結">
+                                    <li>相關連結</li>
+                                </a>
+                                <a href="" title="English版網站">
+                                    <li>English</li>
+                                </a>
+                            </ul>
+                            <!-- 手機版縮在主導覽選單內 fixedCenterPanel置中面板元件  -->
+                            <ul class="socialBox-Mobile">
+                                <a href="" target="_blank" title="FB連結-另開視窗">
+                                    <li><img src="./assets/images/icon/socialFB.svg" alt="FB連結圖"></li>
+                                </a>
+                                <a href="" title="line連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialLine.svg" alt="line連結圖"></li>
+                                </a>
+                                <a href="" title="youtube連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialYT.svg" alt="youtube連結圖"></li>
+                                </a>
+                                <a href="" title="instagram連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialIG.svg" alt="instagram連結圖"></li>
+                                </a>
+                                <a href="" title="教育雲連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialCloud.svg" alt="教育雲連結圖"></li>
+                                </a>
+                            </ul>
+                            <!-- /.手機版縮在主導覽選單內 fixedCenterPanel置中面板元件 手機版縮在主導覽選單內 -->
+                        </ul>
+                    </nav>
+                    <a href="" class="showMenu" title="手機選單按鈕">
+                        <i class="bi bi-list"></i>
+                    </a>
+                    <button id="loginBtn" class="mainNavLinkSpecial">
+                        <img src="./assets/images/icon/loginDark.svg" alt="">
+                        <p>登入</p>
+                    </button>
+                </div>
+            </div>
+            <!-- 登入黃面板 -->
+            <!-- 驗證碼：https://tricohobby.net/trico/2443/ -->
+            <div class="loginPanel">
+                <div class="container">
+                    <form>
+                        <div class="mb-2">
+                            <label for="account" class="form-label">代碼</label>
+                            <input type="email" class="form-control border-0" id="account" aria-describedby="emailHelp">
+                            <div class="form-link text-end">
+                                <a href="" title="忘記代碼">忘記代碼</a>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="password" class="form-label">密碼</label>
+                            <input type="password" class="form-control border-0" id="password">
+                            <div class="form-link text-end">
+                                <a href="" title="忘記密碼">忘記密碼</a>
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label for="verify" class="form-label">驗證碼</label>
+                            <div class="col-8"><input type="password" class="form-control border-0" id="password"></div>
+                            <div class="col-4 g-0"><img src="./assets/images/verify.png" alt=""></div>
+
+                        </div>
+                        <div class="mb-2">
+                            <div class="text-end">
+                                <img src="./assets/images/icon/refresh.svg" alt="更新識別碼">
+                                <img src="./assets/images/icon/sound.svg" alt="播放識別碼">
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary rounded-pill">登入</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!-- /.導覽列 -->
+        <!-- breadcrumb麵包屑元件 -->
+        <!-- 麵包屑aria-current="page" 無障礙當前位置使用此語法 -->
+        <div class="container mt-lg-6 mt-4">
+            <nav aria-label="breadcrumb" id="breadcrumbCustom">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./index.html" class="bg-light"><img
+                                src="./assets/images/icon/homeDark.svg" alt="">首頁</a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="./featureCampus.html" class="bg-light"><img
+                                src="./assets/images/icon/campusDark.svg" alt="">特色防災校園</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">防災遊學路線
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- /.breadcrumb麵包屑元件 -->
+    </div>
+    <!-- 主要內容 -->
+    <main>
+        <div class="container mb-6">
+            <div class="row row-cols-1 row-cols-lg-3 g-3">
+                <div class="col">
+                    <a href="#">
+                        <div class="flip">
+                            <div class="front">
+                                <div class="inner">
+                                    <img class="position-absolute top-0 start-0" src="./assets/images/fingerIcon.svg"
+                                        alt="">
+                                    <p class="cardTitle">水土共生島</p>
+                                    <img src="./assets/images/flipPhoto.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <p class="cardTitle">\ 水土共生島 /</p>
+                                <p class="cardText">歷經921地震的中部在悲痛中重生，得到了與水土共生的力量，災後的重建與蛻變，讓這片土地再次展翅。</p>
+                                <div class="text-center"><span class="cardTag">前進路線<i
+                                            class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <div class="flip">
+                            <div class="front">
+                                <div class="inner">
+                                    <img class="position-absolute top-0 start-0" src="./assets/images/fingerIcon.svg"
+                                        alt="">
+                                    <p class="cardTitle">山海探索島</p>
+                                    <img src="./assets/images/flipPhoto.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <p class="cardTitle">\ 山海探索島 /</p>
+                                <p class="cardText">灑滿金色陽光的南台灣，課程結合了自然與傳統文化，搭配戶外活動，讓民眾學習與大地之母和平共處。</p>
+                                <div class="text-center"><span class="cardTag">前進路線<i
+                                            class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="./campusTourIsland.html">
+                        <div class="flip">
+                            <div class="front">
+                                <div class="inner">
+                                    <img class="position-absolute top-0 start-0" src="./assets/images/fingerIcon.svg"
+                                        alt="">
+                                    <p class="cardTitle">風雨森林島</p>
+                                    <img src="./assets/images/flipPhoto.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <p class="cardTitle">\ 風雨森林島 /</p>
+                                <p class="cardText">嘉南地區山坡地陡峭，沿海地勢低窪，每逢颱風季經常受到風雨攪擾，所以居民都是身經百戰的風雨勇士。</p>
+                                <div class="text-center"><span class="cardTag">前進路線<i
+                                            class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="col">
+                    <a href="#">
+                        <div class="flip">
+                            <div class="front">
+                                <div class="inner">
+                                    <img class="position-absolute top-0 start-0" src="./assets/images/fingerIcon.svg"
+                                        alt="">
+                                    <p class="cardTitle">越野生存島</p>
+                                    <img src="./assets/images/flipPhoto.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <p class="cardTitle">\ 越野生存島 /</p>
+                                <p class="cardText">你懂得在野外覓食、住宿，並且安全抵達集結點嗎?豐富的野外求生、急救、勘查、定向等主題等你來挑戰!</p>
+                                <div class="text-center"><span class="cardTag">前進路線<i
+                                            class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col  filpTitleWrap">
+                    <div class="filpTitle">
+                        <img class="p-4" src="./assets/images/filpTitle.svg" alt="">
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <div class="flip">
+                            <div class="front">
+                                <div class="inner">
+                                    <img class="position-absolute top-0 start-0" src="./assets/images/fingerIcon.svg"
+                                        alt="">
+                                    <p class="cardTitle">祖靈傳說島</p>
+                                    <img src="./assets/images/flipPhoto.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <p class="cardTitle">\ 祖靈傳說島 /</p>
+                                <p class="cardText">先人透過傳說、禁忌、習俗教我們如何崇敬自然，讓我們一起聆聽祖靈的話語，學習先人的智慧吧!</p>
+                                <div class="text-center"><span class="cardTag">前進路線<i
+                                            class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <div class="flip">
+                            <div class="front">
+                                <div class="inner">
+                                    <img class="position-absolute top-0 start-0" src="./assets/images/fingerIcon.svg"
+                                        alt="">
+                                    <p class="cardTitle">科技智慧島</p>
+                                    <img src="./assets/images/flipPhoto.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <p class="cardTitle">\ 科技智慧島 /</p>
+                                <p class="cardText">自然與科技兼具的北臺灣，結合自身優勢與防災課程，互動體驗災害與避難，一起來解鎖這些課程關卡吧!</p>
+                                <div class="text-center"><span class="cardTag">前進路線<i
+                                            class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <div class="flip">
+                            <div class="front">
+                                <div class="inner">
+                                    <img class="position-absolute top-0 start-0" src="./assets/images/fingerIcon.svg"
+                                        alt="">
+                                    <p class="cardTitle">水域生態島</p>
+                                    <img src="./assets/images/flipPhoto.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <p class="cardTitle">\ 水域生態島 /</p>
+                                <p class="cardText">臺灣環山面海，水資源管理與我們息息相關，一起來學習淹水檢測、海洋防災資源與海上安全準備等課程吧!</p>
+                                <div class="text-center"><span class="cardTag">前進路線<i
+                                            class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#">
+                        <div class="flip">
+                            <div class="front">
+                                <div class="inner">
+                                    <img class="position-absolute top-0 start-0" src="./assets/images/fingerIcon.svg"
+                                        alt="">
+                                    <p class="cardTitle">永續循環島</p>
+                                    <img src="./assets/images/flipPhoto.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="back">
+                                <p class="cardTitle">\ 永續循環島 /</p>
+                                <p class="cardText">桃竹苗地區有湖口斷層與獅潭斷層，是地震高潛勢地區，居民更加注重基地環境永續及生態循環議題。</p>
+                                <div class="text-center"><span class="cardTag">前進路線<i
+                                            class="bi bi-chevron-right"></i></span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 頁尾 -->
+    <footer class="bg-light pt-7 pb-8 position-relative">
+        <a accesskey="C" href="#" title="頁尾網站資訊" class="accesskey_absolute"> ::: </a>
+        <div class="container">
+            <!-- <div class="d-flex justify-content-between border-bottom py-2"> -->
+            <div
+                class="d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-between justify-content-xl-between justify-content-xxl-between border-bottom py-2">
+                <ul class="footerUl">
+                    <a href="" title="網站導覽">
+                        <li>網站導覽</li>
+                    </a>
+                    <a href="" title="常見問題">
+                        <li>常見問題</li>
+                    </a>
+                    <a href="" title="相關連結">
+                        <li>相關連結</li>
+                    </a>
+                    <a href="" title="English英文版網站">
+                        <li class="textRound">English</li>
+                    </a>
+                </ul>
+                <span class="text-primary font-weight-sm p-2">瀏覽人次：<span class="textRound">1,017,614</span></span>
+            </div>
+            <div
+                class="d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-between justify-content-xl-between justify-content-xxl-between align-items-lg-start align-items-xl-start align-items-xxl-start pt-4">
+                <div class="footerInfo">
+                    <p>財團法人台灣地理資訊中心</p>
+                    <p><span class="textRound">E-mail：moeservices@tgic.org.tw</span>(防疫期間優先）</p>
+                    <p>聯絡電話：<span class="textRound">02-23931122 #661 / #867</span></p>
+                    <p>服務時間：週一至週五<span class="textRound">09:00~12:00、13:00~18:00</span></p>
+                    <p class="pt-7">版權教育部 <span class="textRound">Ministry of Education</span></p>
+                    <p>本網站建議使用<span class="textRound">Chrome、Firefox、Edge</span>瀏覽器及以<span
+                            class="textRound">1280ｘ800</span>以上解析度，以獲得最佳瀏覽體驗</p>
+                </div>
+                <img class="w-lg-25p w-md-25p w-sm-50p" src="./assets/images/accessibility.svg" alt="無障礙標籤">
+            </div>
+        </div>
+    </footer>
+    <!-- /.頁尾 -->
+    <!-- gotoTop元件 -->
+    <a href="#" id="c-go-top" class="c-go-top" title="回到上方按鈕">
+        <i class="bi bi-chevron-up h2"></i>
+    </a>
+    <!-- /.gotoTop -->
+    <!-- fixedCenterPanel置中面板元件 -->
+    <ul class="fixedCenterPanel">
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialFB.svg" alt="FB連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialLine.svg" alt="line連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialYT.svg" alt="youtube連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialIG.svg" alt="instagram連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialCloud.svg" alt="教育雲連結圖"></li>
+        </a>
+    </ul>
+    <!-- /.fixedCenterPanel置中面板元件 -->
+
+    <script>
+        // ＝＝主導覽RWD選單
+        $(document).ready(function () {
+            $('.showMenu').on('click', function (e) {
+                e.preventDefault();
+                $('.mainNav').toggleClass('d-flex');
+            });
+
+
+        });
+
+
+        //＝＝sticky Navbar 滑動固定主導覽在上方 
+        window.onscroll = function () {
+            fixMainmenuFunction()
+        };
+        // 設主導覽
+        var navbar = document.querySelector(".mainNavWrap");
+        // 設sticky
+        var sticky = navbar.offsetTop;
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function fixMainmenuFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        // ＝＝登入開啟關閉面板
+        // 點擊畫面div以外的任何地方就隱藏DIV
+        $("body").click(function () {
+            $(".loginPanel").hide();
+        });
+        // 點擊div時、不向上層冒泡。
+        $(".loginPanel").click(function (e) {
+            e.stopPropagation();
+        });
+        // 點擊按鈕時顯示或隱藏div
+        $("#loginBtn").click(function (e) {
+            e.stopPropagation();
+            $(".loginPanel").toggle();
+        });
+
+        // ＝＝gotoTop元件-回到上方功能
+        $(function () {
+            // Amount of scrolling before button is shown/hidden.
+            var offset = 100;
+
+            // Fade duration
+            var duration = 500;
+
+            // Toggle view of button when scrolling.
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > offset) {
+                    $('#c-go-top').fadeIn(duration);
+                } else {
+                    $('#c-go-top').fadeOut(duration);
+                }
+            });
+
+            // Scroll to top when button is clicked.
+            $('#c-go-top').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, duration);
+                return false;
+            });
+        });
+
+        // 檢索面板開合
+        $(".searchTitle").click(function () {
+            $(".searchBox").slideToggle();
+            $(".searchTitleIcon").toggleClass("rotate180");
+        });
+
+        // 偵測螢幕是手機觸發下列事件
+        // if ($(window).width() < 767) {
+        //     // JavaScript here 
+        //     let elSearchLineTitle = document.querySelector('.searchLineTitle');
+        //     elSearchLineTitle.addEventListener('click', function (e) {
+        //         this.
+        //         console.log('Google!');
+        //     }, false);
+
+
+        //     console.log('手機');
+        //     // 當視窗寬度小於767px時執行
+        // } else {
+        //     // JavaScript here
+        //     console.log('不是手機');
+        //     // 當視窗寬度不小於767px時執行
+        // }
+
+
+
+
+
+        // 檢索面板手機行列縮放\旋轉icon 點到自己透過this動作
+        $(".searchLineTitle").click(function (e) {
+
+            e.preventDefault();
+            $('.searchLineCheckBox').slideToggle();
+        });
+
+        // $("#searchLineTitle1").click(function () {
+        //     $("#searchLineCheckBox1").slideToggle();
+        //     $(".searchLineTitleCross").toggleClass("rotate-45");
+        // });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="Zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="教導全國學生有關防災教育資訊的網站" />
+    <title>教育部防災教育資訊網前台</title>
+    <link rel="stylesheet" href="./assets/scss/all.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/facicon.ico" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- slick -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <!-- lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js" type="text/javascript"></script>
+    <!-- bs js (自己放的js檔會出錯～先用cdn) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- slick js -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body class="position-relative">
+    <div>
+        <!-- 導覽列 -->
+        <header class="position-relative container-fluid gx-0">
+            <ul class="toolNav">
+                <a href="./sitemap.html" title="網站導覽">
+                    <li>網站導覽</li>
+                </a>
+                <a href="./qa.html" title="常見問題">
+                    <li>常見問題</li>
+                </a>
+                <a href="" title="相關連結">
+                    <li>相關連結</li>
+                </a>
+                <a href="" title="English版網站">
+                    <li>English</li>
+                </a>
+            </ul>
+            <div class="mainNavWrap">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <a accesskey="U" href="#" title="上方功能區塊" class="accesskey"> ::: </a>
+                    </div>
+                    <div class="logo">
+                        <h1>
+                            <a tabindex="1" href="./index.html" title="防災教育資訊網">防災教育資訊網</a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <nav class="mainNavInnerWrap">
+                        <ul class="mainNav">
+                            <a href="./introduction.html" class="mainNavLink" title="計畫簡介">
+                                <img src="./assets/images/icon/aboutDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">計畫簡介</li>
+                            </a>
+                            <a href="./teachingMaterial.html" class="mainNavLink" title="教學資源">
+                                <img src="./assets/images/icon/materialDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">教學資源</li>
+                            </a>
+                            <a href="./news.html" class="mainNavLink active" title="最新消息">
+                                <img src="./assets/images/icon/newsDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">最新消息</li>
+                            </a>
+                            <a href="./activity.html" class="mainNavLink" title="年度活動">
+                                <img src="./assets/images/icon/eventDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">年度活動</li>
+                            </a>
+                            <a href="./featureCampus.html" class="mainNavLink" title="特色防災校園">
+                                <img src="./assets/images/icon/campusDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">特色防災校園</li>
+                            </a>
+                            <a href="./newsletter.html" class="mainNavLink" title="電子報">
+                                <img src="./assets/images/icon/edmDark.svg" aria-hidden="true" alt="">
+                                <li class="ps-3 ps-xl-0">電子報</li>
+                            </a>
+                            <!-- 手機版的工具導覽 -->
+                            <ul class="toolNavMobile">
+                                <a href="" title="網站導覽">
+                                    <li>網站導覽</li>
+                                </a>
+                                <a href="" title="常見問題">
+                                    <li>常見問題</li>
+                                </a>
+                                <a href="" title="相關連結">
+                                    <li>相關連結</li>
+                                </a>
+                                <a href="" title="English版網站">
+                                    <li>English</li>
+                                </a>
+                            </ul>
+                            <!-- 手機版縮在主導覽選單內 fixedCenterPanel置中面板元件  -->
+                            <ul class="socialBox-Mobile">
+                                <a href="" target="_blank" title="FB連結-另開視窗">
+                                    <li><img src="./assets/images/icon/socialFB.svg" alt="FB連結圖"></li>
+                                </a>
+                                <a href="" title="line連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialLine.svg" alt="line連結圖"></li>
+                                </a>
+                                <a href="" title="youtube連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialYT.svg" alt="youtube連結圖"></li>
+                                </a>
+                                <a href="" title="instagram連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialIG.svg" alt="instagram連結圖"></li>
+                                </a>
+                                <a href="" title="教育雲連結圖-另開視窗">
+                                    <li><img src="./assets/images/icon/socialCloud.svg" alt="教育雲連結圖"></li>
+                                </a>
+                            </ul>
+                            <!-- /.手機版縮在主導覽選單內 fixedCenterPanel置中面板元件 手機版縮在主導覽選單內 -->
+                        </ul>
+                    </nav>
+                    <a href="" class="showMenu" title="手機選單按鈕">
+                        <i class="bi bi-list"></i>
+                    </a>
+                    <button id="loginBtn" class="mainNavLinkSpecial">
+                        <img src="./assets/images/icon/loginDark.svg" alt="">
+                        <p>登入</p>
+                    </button>
+                </div>
+            </div>
+            <!-- 登入黃面板 -->
+            <!-- 驗證碼：https://tricohobby.net/trico/2443/ -->
+            <div class="loginPanel">
+                <div class="container">
+                    <form>
+                        <div class="mb-2">
+                            <label for="account" class="form-label">代碼</label>
+                            <input type="email" class="form-control border-0" id="account" aria-describedby="emailHelp">
+                            <div class="form-link text-end">
+                                <a href="" title="忘記代碼">忘記代碼</a>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label for="password" class="form-label">密碼</label>
+                            <input type="password" class="form-control border-0" id="password">
+                            <div class="form-link text-end">
+                                <a href="" title="忘記密碼">忘記密碼</a>
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                            <label for="verify" class="form-label">驗證碼</label>
+                            <div class="col-8"><input type="password" class="form-control border-0" id="password"></div>
+                            <div class="col-4 g-0"><img src="./assets/images/verify.png" alt=""></div>
+
+                        </div>
+                        <div class="mb-2">
+                            <div class="text-end">
+                                <img src="./assets/images/icon/refresh.svg" alt="更新識別碼">
+                                <img src="./assets/images/icon/sound.svg" alt="播放識別碼">
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary rounded-pill">登入</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <!-- /.導覽列 -->
+        <!-- breadcrumb麵包屑元件 -->
+        <!-- 麵包屑aria-current="page" 無障礙當前位置使用此語法 -->
+        <div class="container mt-lg-6 mt-4 position-relative">
+            <nav aria-label="breadcrumb" id="breadcrumbCustom">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./index.html" class="bg-light"><img
+                                src="./assets/images/icon/homeDark.svg" alt="">首頁</a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="./news.html" class="bg-light"><img
+                                src="./assets/images/icon/campusDark.svg" alt="">最新消息</a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="./news.html" class="bg-light"><img
+                                src="./assets/images/icon/campusDark.svg" alt="">近期新聞</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">千里使命並肩行 溫馨傳遞防災情
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- /.breadcrumb麵包屑元件 -->
+        <!-- 標題 -->
+        <!-- <div class="colorTitleWrap py-4 py-md-7 position-relative">
+            <img src="./assets/images/icon/campusDark.svg" class="d-block mx-auto cube40" alt="">
+            <div class="colorTitle">Feature Campus</div>
+            <h2 class="h4 font-weight-lg text-primary">特色防災校園</h2>
+        </div> -->
+        <!-- /.標題 -->
+    </div>
+    <!-- 主要內容 -->
+    <main>
+        <!-- 內頁圖片區 -->
+        <div class="pageCarousel mt-md-15 mt-9">
+            <div class="slider responsive">
+                <div>
+                    <img src="https://disaster.moe.edu.tw/MOE_FILE/daolpU//news/image/1101/%E6%95%99%E8%82%B2%E9%83%A8%E8%BE%A6%E7%90%86%E3%80%8C%E9%98%B2%E7%81%BD%E9%9D%92%E5%B9%B4%E5%9C%8B%E9%9A%9B%E9%A0%98%E8%A2%96%E7%87%9F%E3%80%8D%E5%9C%8B%E5%A4%96%E5%9F%B9%E8%A8%93%EF%BC%8C%E9%98%B2%E7%81%BD%E9%9D%92%E5%B9%B4%E5%A4%A7%E4%BD%BF31%E6%97%A5%E5%89%8D%E5%BE%80%E6%97%A5%E6%9C%AC%E4%BA%A4%E6%B5%81%E5%8F%83%E8%A8%AA.jpg"
+                        loading="lazy" alt="此處帶入後台「圖片描述」">
+                </div>
+                <div>
+                    <img src="https://disaster.moe.edu.tw/MOE_FILE/daolpU//news/image/1101/%E9%98%B2%E7%81%BD%E9%9D%92%E5%B9%B4%E5%A4%A7%E4%BD%BF%E5%A4%A7%E5%90%88%E7%85%A7.jpg"
+                        loading="lazy" alt="此處帶入後台「圖片描述」">
+                </div>
+                <div>
+                    <img src="https://disaster.moe.edu.tw/MOE_FILE/daolpU//news/image/1101/%E6%95%99%E8%82%B2%E9%83%A8%E8%87%B4%E8%B4%88%E6%97%A5%E6%9C%AC%E5%AE%AE%E5%9F%8E%E7%B8%A3%E5%BB%B3%E4%BB%A3%E8%A1%A8%E7%A6%AE%E5%93%81.jpg"
+                        loading="lazy" alt="此處帶入後台「圖片描述」">
+                </div>
+            </div>
+        </div>
+        <!-- /.內頁圖片區 -->
+        <!-- 內頁 -->
+        <div class="container pb-9 pb-md-15">
+            <div class="pageData">
+                <div class="textRound font-size-lg font-weight-sm">
+                    2022.6.8
+                </div>
+                <div class="pageTitle">
+                    千里使命並肩行 溫馨傳遞防災情
+                </div>
+                <div class="pageContent">
+                    <div class="row">
+                        <div class="col-lg-6 col-12 mt-7 mt-md-0">
+                            <div class="pageLineWrap pb-9 pb-md-15">
+                                <div class="pageLine">
+                                    <div class="pageLineTitle">
+                                        教案下載
+                                    </div>
+                                    <div class="pageLineInfo">
+                                        <div class="infoText">
+                                            <a href="#" class="d-block me-3" target="_blank" title="資源下載-另開視窗">
+                                                <p class="d-flex justify-content-between"><span>防災島探險隊.pdf </span><i
+                                                        class="bi bi-box-arrow-up-right"></i></p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pageLine">
+                                    <div class="pageLineTitle">
+                                        連結
+                                    </div>
+                                    <div class="pageLineInfo">
+                                        <div class="infoText">
+                                            <a href="#" class="d-block me-3 mb-1" target="_blank" title="資源連結-另開視窗">
+                                                <p class="d-flex justify-content-between"><span
+                                                        class="word-break-all">研討會</span><i
+                                                        class="bi bi-box-arrow-up-right"></i></p>
+                                            </a>
+                                            <a href="#" class="d-block me-3 mb-1" target="_blank" title="資源連結-另開視窗">
+                                                <p class="d-flex justify-content-between"><span
+                                                        class="word-break-all">https://www.youtube.com/watch?v=bQXTpEVZzgo</span><i
+                                                        class="bi bi-box-arrow-up-right"></i></p>
+                                            </a>
+                                            <a href="#" class="d-block me-3 mb-1" target="_blank" title="資源連結-另開視窗">
+                                                <p class="d-flex justify-content-between"><span>連結二</span><i
+                                                        class="bi bi-box-arrow-up-right"></i></p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col word-break-all">
+                            為鼓勵教保服務機構辦理安全議題融入教保活動課程，以支持推廣安全教育，教育部國民及學前教育署自111學年度起補助各直轄市、縣市政府推動「轄內教保服務機構辦理安全議題融入教保活動課程」經費，共70間幼兒園參與，並由其教保服務人員自行設計符合幼兒年齡及生活經驗的教學活動，以利從幼兒園階段即落實維護兒童安全教育，建立孩子正確觀念及安全的行為。
+                            國教署說明，由國教署委託靖娟基金會所編製「幼兒園安全教育參考教材」，共分為交通、水域、防墜、防災、食藥及人身等六領域，111年持續辦理「幼兒園安全教育參考教材推廣計畫」，即針對六大安全範疇擇6間種子幼兒園進行安全教育議題課程試教，並安排專家入園輔導，藉由實際觀課與討論，針對教案試教流程、活動過程引導以及其他教學紀錄提供輔導建議，以利參與的幼兒園後續編修調整教材，並讓安全教育能實際落實在幼兒園中。
+                            以輔仁大學附設新北市私立幼兒園為例，該園特別針對「食藥安全」領域議題融入教保活動課程，在試教準備過程中，利用課程所需探討的圖卡教材、學習單，設計出與幼兒生活經驗相關的課程，並鼓勵幼兒將所學落實於日常生活中。另於專家入園輔導前先召開試教諮詢會議，針對園內教師提出有關於研讀、探究教案時的疑問，進行解惑答覆及調整課程設計，發現中大班幼兒已能彼此互相提醒，顯見將食藥安全教育議題融入幼兒日常的教保活動課程，就可從生活中培養並深化其食藥安全教育知能。
+                            此外，為提供幼兒園於推動安全教育課程時所需的專業諮詢，國教署也委託靖娟基金會建置安全教育推廣各領域專業諮詢名單，名單已置於全國教保資訊網（https://www.ece.moe.edu.tw/ch/preschool/.galleries/preschool-files/safelist.pdf），提供各教保服務機構自行下載運用。
+                            國教署表示，透過安全教育議題課程補助計畫推廣，可讓更多教保服務人員能奠基於理論，規劃符應課程大綱精神的安全教育課程，以提升幼兒園安全教育課程品質，進一步培養幼兒內化、自主的安全意識與習慣。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.內頁 -->
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="bg-light pt-7 pb-8 position-relative">
+        <a accesskey="C" href="#" title="頁尾網站資訊" class="accesskey_absolute"> ::: </a>
+        <div class="container">
+            <!-- <div class="d-flex justify-content-between border-bottom py-2"> -->
+            <div
+                class="d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-between justify-content-xl-between justify-content-xxl-between border-bottom py-2">
+                <ul class="footerUl">
+                    <a href="" title="網站導覽">
+                        <li>網站導覽</li>
+                    </a>
+                    <a href="" title="常見問題">
+                        <li>常見問題</li>
+                    </a>
+                    <a href="" title="相關連結">
+                        <li>相關連結</li>
+                    </a>
+                    <a href="" title="English英文版網站">
+                        <li class="textRound">English</li>
+                    </a>
+                </ul>
+                <span class="text-primary font-weight-sm p-2">瀏覽人次：<span class="textRound">1,017,614</span></span>
+            </div>
+            <div
+                class="d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-between justify-content-xl-between justify-content-xxl-between align-items-lg-start align-items-xl-start align-items-xxl-start pt-4">
+                <div class="footerInfo">
+                    <p>財團法人台灣地理資訊中心</p>
+                    <p><span class="textRound">E-mail：moeservices@tgic.org.tw</span>(防疫期間優先）</p>
+                    <p>聯絡電話：<span class="textRound">02-23931122 #661 / #867</span></p>
+                    <p>服務時間：週一至週五<span class="textRound">09:00~12:00、13:00~18:00</span></p>
+                    <p class="pt-7">版權教育部 <span class="textRound">Ministry of Education</span></p>
+                    <p>本網站建議使用<span class="textRound">Chrome、Firefox、Edge</span>瀏覽器及以<span
+                            class="textRound">1280ｘ800</span>以上解析度，以獲得最佳瀏覽體驗</p>
+                </div>
+                <img class="w-lg-25p w-md-25p w-sm-50p" src="./assets/images/accessibility.svg" alt="無障礙標籤">
+            </div>
+        </div>
+    </footer>
+    <!-- /.頁尾 -->
+    <!-- gotoTop元件 -->
+    <a href="#" id="c-go-top" class="c-go-top" title="回到上方按鈕">
+        <i class="bi bi-chevron-up h2"></i>
+    </a>
+    <!-- /.gotoTop -->
+    <!-- fixedCenterPanel置中面板元件 -->
+    <ul class="fixedCenterPanel">
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialFB.svg" alt="FB連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialLine.svg" alt="line連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialYT.svg" alt="youtube連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialIG.svg" alt="instagram連結圖"></li>
+        </a>
+        <a href="" target="_blank" title="FB連結-另開視窗">
+            <li><img src="./assets/images/icon/socialCloud.svg" alt="教育雲連結圖"></li>
+        </a>
+    </ul>
+    <!-- /.fixedCenterPanel置中面板元件 -->
+
+    <script>
+        // ＝＝主導覽RWD選單
+        $(document).ready(function () {
+            $('.showMenu').on('click', function (e) {
+                e.preventDefault();
+                $('.mainNav').toggleClass('d-flex');
+            });
+
+
+        });
+
+
+        //＝＝sticky Navbar 滑動固定主導覽在上方 
+        window.onscroll = function () {
+            fixMainmenuFunction()
+        };
+        // 設主導覽
+        var navbar = document.querySelector(".mainNavWrap");
+        // 設sticky
+        var sticky = navbar.offsetTop;
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function fixMainmenuFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        // ＝＝登入開啟關閉面板
+        // 點擊畫面div以外的任何地方就隱藏DIV
+        $("body").click(function () {
+            $(".loginPanel").hide();
+        });
+        // 點擊div時、不向上層冒泡。
+        $(".loginPanel").click(function (e) {
+            e.stopPropagation();
+        });
+        // 點擊按鈕時顯示或隱藏div
+        $("#loginBtn").click(function (e) {
+            e.stopPropagation();
+            $(".loginPanel").toggle();
+        });
+
+        // ＝＝gotoTop元件-回到上方功能
+        $(function () {
+            // Amount of scrolling before button is shown/hidden.
+            var offset = 100;
+
+            // Fade duration
+            var duration = 500;
+
+            // Toggle view of button when scrolling.
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > offset) {
+                    $('#c-go-top').fadeIn(duration);
+                } else {
+                    $('#c-go-top').fadeOut(duration);
+                }
+            });
+
+            // Scroll to top when button is clicked.
+            $('#c-go-top').click(function (event) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, duration);
+                return false;
+            });
+        });
+
+        // 檢索面板開合
+        $(".searchTitle").click(function () {
+            $(".searchBox").slideToggle();
+            $(".searchTitleIcon").toggleClass("rotate180");
+        });
+
+        // 檢索面板手機行列縮放\旋轉icon 點到自己透過this動作
+        $(".searchLineTitle").click(function (e) {
+
+            e.preventDefault();
+            $('.searchLineCheckBox').slideToggle();
+        });
+
+        // slick 輪播圖
+        $(".responsive").slick({
+            arrows: false, //圖片左右的箭頭
+            dots: true, //圖片下方的點切換
+            infinite: false, ////是否要loop，預設為true
+            speed: 300, //切換速率
+            slidesToShow: 3, //一次顯示
+            slidesToScroll: 3, //切換下一頁時移動3個
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>

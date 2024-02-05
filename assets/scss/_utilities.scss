@@ -1,0 +1,303 @@
+// Better Comments註解說明
+// – 一般的註解
+// ! 比較複雜的、我回頭再看可能會忘記的邏輯或功能說明
+// ? 需要與其他協作者溝通的留言
+// > 目錄索引 (多用於 CSS 檔)
+//* 區塊高亮提示＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// 	Todo Tree   註解說明 ：Todo Tree 預設有三種前綴詞，分別是：TODO, FIXME, BUG，只要在註解前面加入這些前綴詞，一樣能有高亮設定。
+
+
+//* 文字類＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// 文字大小
+.font-size {
+    &-xs {
+        font-size: $font-size-base*0.75; //12px
+    }
+
+    &-sm {
+        font-size: $font-size-sm; //14px
+    }
+
+    &-md {
+        font-size: $font-size-base; //16px
+    }
+
+    &-md2 {
+        font-size: $font-size-base*1.125; //18px
+    }
+
+    &-lg {
+        font-size: $font-size-lg; //20px
+    }
+
+    &-xl {
+        font-size: 1.5rem; //24px
+    }
+}
+
+// 手機版以下用的字體
+.mobile-font-size {
+    &-xs {
+        @include device-sm {
+            font-size: $font-size-base*0.75; //12px
+        }
+    }
+
+    &-sm {
+        @include device-sm {
+            font-size: $font-size-sm; //14px
+        }
+    }
+
+    &-md {
+        @include device-sm {
+            font-size: $font-size-base; //16px
+        }
+    }
+
+    &-lg {
+        @include device-sm {
+            font-size: $font-size-base*1.125; //18px
+        }
+    }
+
+    &-xl {
+        @include device-sm {
+            font-size: $font-size-lg; //20px
+        }
+    }
+}
+
+// 螢光筆css https://codepen.io/alvarotrigo/pen/BaJyBvz
+.highlight-yellow {
+    border-radius: 0.25em 0 0.5em 0;
+    background-image: linear-gradient(-100deg,
+            rgba(255, 224, 0, 0.2),
+            rgba(255, 224, 0, 0.7) 95%,
+            rgba(255, 224, 0, 0.1));
+}
+
+// 字距
+.letter-spacing-sm {
+    letter-spacing: 2px;
+}
+
+.letter-spacing-xl {
+    letter-spacing: 1.5rem;
+}
+
+// 字重
+.font-weight {
+    &-sm {
+        font-weight: $font-weight-light; //300 light
+    }
+
+    &-md {
+        font-weight: $font-weight-normal; //400 regular
+    }
+
+    &-lg {
+        font-weight: $font-weight-semibold; //500 medium
+    }
+
+    &-xl {
+        font-weight: $font-weight-bold; //700 bold
+    }
+}
+
+//字型
+.textRound {
+    font-family: 'M+PLUS+Rounded+1c';
+}
+
+.textUbuntu {
+    font-family: 'Ubuntu';
+}
+
+// 寬度
+.min-w80 {
+    min-width: 80px;
+}
+
+.min-w100 {
+    min-width: 100px;
+}
+
+.min-w160 {
+    min-width: 160px;
+}
+
+
+.w145 {
+    width: 145px;
+}
+
+
+
+.cube16 {
+    width: 16px;
+    height: 16px;
+}
+
+.cube40 {
+    width: 40px;
+    height: 40px;
+}
+
+.cube42 {
+    width: 42px;
+    height: 42px;
+}
+
+.w-30p {
+    width: 30%;
+}
+
+.w-md-25p {
+    @include device-md {
+        width: 25%;
+    }
+}
+
+.w-lg-25p {
+    @include device-lg {
+        width: 25%;
+    }
+}
+
+.w-sm-75p {
+    @include device-sm {
+        width: 75%;
+    }
+}
+
+.w-sm-50p {
+    @include device-sm {
+        width: 50%;
+    }
+}
+
+.w-sm-25p {
+    @include device-sm {
+        width: 25%;
+    }
+}
+
+// 間距
+.mt-9minus {
+    margin-top: -60px;
+}
+
+.mt80-minus {
+    margin-top: -80px;
+}
+
+// 背景色
+.bgLightBlue {
+    background-color: $lightBlue;
+}
+
+.bgLightGreen {
+    background-color: $lightGreen !important;
+}
+
+.bgLightOrange {
+    background-color: $lightOrange;
+}
+
+.bgTransparent {
+    background: transparent;
+}
+
+
+
+
+//  陰影
+.customShadowSM {
+    box-shadow: 1px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+// 按鈕
+.btn-white {
+    color: $primary;
+    background-color: $white;
+
+    &:hover {
+        color: $primary;
+        background-color: $white;
+    }
+
+    &:active,
+    &:focus {
+        color: $primary;
+        border: none;
+        background-color: $white;
+    }
+}
+
+// css截斷字元
+.singleString {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.lineTwoString {
+    padding-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.lineThreeString {
+    padding-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+// 旋轉角度
+.rotate180 {
+    transform: rotate(180deg);
+    transform-origin: center center;
+}
+
+.rotate-45 {
+    transform: rotate(45deg);
+    transform-origin: center center;
+}
+
+// 無障礙導盲磚設計(直接佔位)
+.accesskey {
+    padding: 4px;
+    color: $blue-800;
+    font-size: 1em;
+}
+
+// 無障礙導盲磚設計(父元素要設定position:relative)
+.accesskey_absolute {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 9;
+    color: $blue-800;
+    font-size: 1em;
+}
+
+// 客製化定位（position設absolute用）
+.end-20px {
+    right: 20px;
+}
+
+.bottom--30px {
+    bottom: -30px;
+}
+
+// 線條樣式
+.boder-top-2-dotted-primary {
+    border-top: 2px dotted $primary;
+}

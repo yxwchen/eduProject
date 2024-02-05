@@ -1,0 +1,748 @@
+// 上方新聞區樣式======================
+.linearGradientLightgreen {
+    background: linear-gradient(to bottom, $white 0%, $lightGreen 100%);
+}
+
+// 後來改成lineListComponent元件
+.newsLink {
+    display: block;
+    font-size: $font-size-lg;
+    color: $primary;
+    font-weight: $font-weight-light;
+    border-bottom: 1px solid $blue-100;
+    padding: 16px 0;
+
+    p {
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: $font-weight-semibold;
+        padding-left: 40px;
+        line-height: 60px;
+
+        @include device-xxl {
+            display: block;
+            line-height: 40px;
+            padding-left: 0;
+        }
+
+        @include device-md {
+            font-size: 18px;
+            line-height: 27px;
+        }
+    }
+
+    span {
+        font-family: 'Noto Sans TC', 'M+PLUS+Rounded+1c';
+        padding-right: 32px;
+
+        @include device-md {
+            font-size: 18px;
+            line-height: 27px;
+            padding-right: 20px;
+        }
+    }
+
+}
+
+// 首頁新聞輪播照片區
+.newsPhotoGrid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 20px;
+    grid-template-areas:
+        "mainPhoto secondPhoto"
+        "mainPhoto thirdPhoto";
+
+    @include device-md {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        // repeat(1, 1fr)
+        grid-template-areas:
+            "mainPhoto"
+            "secondPhoto"
+            "thirdPhoto"
+        ;
+    }
+}
+
+.mainPhoto {
+    grid-area: mainPhoto;
+}
+
+.secondPhoto {
+    grid-area: secondPhoto;
+}
+
+.thirdPhoto {
+    grid-area: thirdPhoto;
+}
+
+// 照片尺寸設定3:4\16:9
+.pos-img {
+    position: relative;
+    width: 100%;
+
+    img {
+        border-radius: 16px;
+    }
+
+    &[data-size="1x1"] {
+        padding-bottom: percentage(1 / 1);
+    }
+
+    &[data-size="3x4"] {
+        padding-bottom: percentage(3 / 4);
+    }
+
+    &[data-size="2x1"] {
+        padding-bottom: percentage(2 / 1);
+    }
+
+    &[data-size="16x9"] {
+        padding-bottom: percentage(9 / 16);
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+// 新聞字體設定
+.itemTitle {
+    width: 100%;
+    color: $white;
+    position: absolute;
+    padding-top: 20px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    border-radius: 0 0 16px 16px;
+
+    .subTitle {
+        padding-left: 20px;
+        font-size: 1.25rem;
+        font-weight: $font-weight-light;
+
+        @include device-lg {
+            font-size: 1rem;
+        }
+    }
+
+    .title {
+        padding-left: 20px;
+        font-size: 1.5rem;
+
+        @include device-lg {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+// .itemTitle:first-child {
+//     padding-bottom: 20px;
+// }
+
+// 照片區old寫法====================
+// .photoWrap {
+//     display: grid;
+//     grid-column-gap: 10px;
+//     grid-row-gap: 10px;
+//     grid-template-rows: 50% 50%;
+//     grid-template-columns: 60% 40%;
+//     grid-template-areas:
+//         "bigPhoto smallPhoto"
+//         "bigPhoto smallPhoto2";
+// }
+
+// .itemTitle {
+//     width: 100%;
+//     color: $white;
+//     position: absolute;
+//     padding-top: 20px;
+//     bottom: 0;
+//     left: 0;
+//     background-color: #000;
+//     background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+//     border-radius: 0 0 16px 16px;
+// }
+
+// .item01 {
+
+//     grid-area: bigPhoto;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     position: relative;
+
+//     img {
+//         border-radius: 16px;
+//     }
+// }
+
+// .item02 {
+//     grid-area: smallPhoto;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     position: relative;
+
+//     img {
+//         border-radius: 16px;
+//     }
+
+// }
+
+// .item03 {
+//     grid-area: smallPhoto2;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     position: relative;
+
+//     img {
+//         border-radius: 16px;
+//     }
+// }
+
+// 圓點
+.potPrimary {
+    width: 12px;
+    height: 12px;
+    border-radius: 999em;
+    background-color: $primary;
+    border: 0;
+}
+
+// 空心圓
+.potOutlinePrimary {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid $primary;
+
+    // 選中的變圓點
+    &.active {
+        background-color: $primary;
+        border: 0;
+    }
+}
+
+
+
+// 客製主要按鈕
+.btnMain {
+    background-color: $yellow;
+    color: $primary;
+    padding: 12px 0;
+    box-shadow: 0px 4px 0px 0px $primary;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:active {
+        background-color: $yellow;
+        color: $primary;
+        transform: translate3d(3px, 3px, 0);
+        transition: all 0.2s ease;
+        box-shadow: 0px 0px 0px 0px $primary;
+    }
+
+    // 無障礙tab選取focus的樣式
+    &:focus {
+        background-color: $yellow;
+        outline: 3px dashed $pink;
+    }
+
+    // &:active {
+    //     background-color: $yellow;
+    //     outline: 3px dashed $pink;
+    // }
+
+}
+
+// 對話框虎災樣式
+.hooSpeechWrap {
+    width: 100px;
+    text-align: center;
+    position: fixed;
+    top: 150px;
+    left: 24px;
+    z-index: 10;
+
+    @include device-md {
+        display: none;
+    }
+}
+
+.speech-bubble {
+    width: 80%;
+    height: 200px;
+    writing-mode: vertical-rl;
+    position: relative;
+    background: $white;
+    border-radius: .4em;
+    border: 2px solid $primary;
+    margin: 20px 0 20px 10px;
+}
+
+.speech-bubble:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 14px solid transparent;
+    border-top-color: $primary;
+    border-bottom: 0;
+    margin-left: -14px;
+    margin-bottom: -14px;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #fff;
+    border-bottom: 0;
+    margin-left: -10px;
+    margin-bottom: -10px;
+}
+
+// .hooLogo {
+//     width: 100px;
+// }
+
+.closeBtn::after {
+    display: inline-block;
+    content: "\2715";
+    background-color: #fff;
+    border: 1px solid $primary;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    line-height: 28px;
+    text-align: center;
+}
+
+// 防災遊學路線區＝＝＝＝＝＝＝＝＝＝＝＝
+.indexCampus {
+    width: 100%;
+    min-height: 300px;
+    background: url(../images/bg/sky.svg);
+    background-size: cover;
+    // background-position: center center;
+}
+
+.titleBgstyle {
+    color: #fff;
+    font-size: $h1-font-size;
+    font-weight: $font-weight-bold;
+    margin-right: 12px;
+
+    @include device-sm {
+        font-size: $h4-font-size;
+        margin-right: 8px;
+    }
+
+    @include device-xs {
+        margin-right: 2px;
+    }
+
+    &:nth-child(1) {
+        display: inline-block;
+        text-align: center;
+        width: 65px;
+        height: 65px;
+        background: url(../images/bg/titlebg1.svg);
+
+        @include device-sm {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    &:nth-child(2) {
+        display: inline-block;
+        text-align: center;
+        width: 65px;
+        height: 65px;
+        background: url(../images/bg/titlebg2.svg);
+
+        @include device-sm {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    &:nth-child(3) {
+        display: inline-block;
+        text-align: center;
+        width: 65px;
+        height: 65px;
+        background: url(../images/bg/titlebg3.svg);
+
+        @include device-sm {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    &:nth-child(4) {
+        display: inline-block;
+        text-align: center;
+        width: 65px;
+        height: 65px;
+        background: url(../images/bg/titlebg4.svg);
+
+        @include device-sm {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    &:nth-child(5) {
+        display: inline-block;
+        text-align: center;
+        width: 65px;
+        height: 65px;
+        background: url(../images/bg/titlebg5.svg);
+
+        @include device-sm {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    &:nth-child(6) {
+        display: inline-block;
+        text-align: center;
+        width: 65px;
+        height: 65px;
+        background: url(../images/bg/titlebg6.svg);
+
+        @include device-sm {
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
+
+.titleBgstyleSmall {
+    color: #fff;
+    font-size: $h4-font-size;
+    font-weight: $font-weight-bold;
+    margin-right: 8px;
+
+    @include device-sm {
+        margin-right: 7px;
+    }
+
+    // @include device-xs {
+    //     margin-right: 2px;
+    // }
+
+    &:nth-child(1) {
+        display: inline-block;
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        background: url(../images/bg/islandtitlebg1.svg);
+
+        // @include device-sm {
+        //     width: 45px;
+        //     height: 45px;
+        // }
+    }
+
+    &:nth-child(2) {
+        display: inline-block;
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        background: url(../images/bg/islandtitlebg2.svg);
+
+        // @include device-sm {
+        //     width: 45px;
+        //     height: 45px;
+        // }
+    }
+
+    &:nth-child(3) {
+        display: inline-block;
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        background: url(../images/bg/islandtitlebg3.svg);
+
+        // @include device-sm {
+        //     width: 45px;
+        //     height: 45px;
+        // }
+    }
+
+    &:nth-child(4) {
+        display: inline-block;
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        background: url(../images/bg/islandtitlebg4.svg);
+
+        // @include device-sm {
+        //     width: 45px;
+        //     height: 45px;
+        // }
+    }
+
+    &:nth-child(5) {
+        display: inline-block;
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        background: url(../images/bg/islandtitlebg5.svg);
+
+        // @include device-sm {
+        //     width: 45px;
+        //     height: 45px;
+        // }
+    }
+
+    &:nth-child(6) {
+        display: inline-block;
+        text-align: center;
+        width: 37px;
+        height: 37px;
+        background: url(../images/bg/islandtitlebg6.svg);
+
+        // @include device-sm {
+        //     width: 45px;
+        //     height: 45px;
+        // }
+    }
+}
+
+.campusTitle {
+    color: $primary;
+    letter-spacing: 1.5rem;
+    font-family: 'M+PLUS+Rounded+1c';
+    font-weight: $font-weight-semibold;
+    padding-top: 16px;
+    text-align: center;
+
+    @include device-sm {
+        font-size: $font-size-base*0.75;
+        letter-spacing: 1rem;
+    }
+}
+
+.hooTaiwan {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    position: relative;
+
+}
+
+.indexCampusPhotoWrap {
+    // background-color: #caf;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include device-md {
+        right: -30px;
+    }
+}
+
+.indexCampusPhotoWrap2 {
+    // background-color: #cfa;
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+    z-index: 9;
+
+    @include device-xxl {
+        left: 60px;
+        bottom: -30px;
+    }
+
+    @include device-lg {
+        z-index: 0;
+        left: 50px;
+    }
+
+    @include device-md {
+        left: -30px;
+    }
+}
+
+.indexCampusPhotoBig {
+    width: 342px;
+    height: 342px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    @include device-xxl {
+        width: 280px;
+        height: 280px;
+    }
+
+    @include device-lg {
+        width: 210px;
+        height: 210px;
+    }
+
+    @include device-sm {
+        width: 148px;
+        height: 148px;
+    }
+}
+
+.indexCampusPhotoSmallOne {
+    width: 242px;
+    height: 242px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    left: -150px;
+    bottom: -50px;
+
+    @include device-xxl {
+        width: 200px;
+        height: 200px;
+        left: -110px;
+        z-index: 10;
+    }
+
+    @include device-xl {
+        display: none;
+    }
+}
+
+.indexCampusPhotoSmallTwo {
+    width: 242px;
+    height: 242px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: -100px;
+    left: -150px;
+
+    @include device-xxl {
+        width: 200px;
+        height: 200px;
+    }
+
+    @include device-xl {
+        display: none;
+    }
+}
+
+// .zindex10 {
+//     z-index: 10;
+// }
+
+
+
+// 年度活動區塊
+.waveMask {
+    --mask:
+        radial-gradient(41.38px at 50% 58.50px, #000 99%, #0000 101%) calc(50% - 60px) 0/120px 100%,
+        radial-gradient(41.38px at 50% -28.5px, #0000 99%, #000 101%) 50% 30px/120px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.colorTitleWrap {
+    text-align: center;
+    margin: 0 auto;
+    color: $primary;
+}
+
+.colorTitle {
+    font-size: 48px;
+    font-family: 'M PLUS Rounded 1c';
+    font-weight: 900;
+
+    background-image: url("../images/bg/colorTitle.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-size: 100% 100%;
+    background-position: 0 center;
+    color: transparent;
+    /* 文字顏色設定透明 */
+    -webkit-background-clip: text;
+    /* 背景裁剪成文字的前景色 */
+    background-clip: text;
+
+    @include device-sm {
+        font-size: 32px;
+    }
+
+}
+
+// 花路米人像定位
+.hooPeople {
+    position: absolute;
+    right: 20%;
+    bottom: 0;
+    width: 30%;
+
+    @include device-sm {
+        width: 60%;
+    }
+}
+
+// 後來沒用到～可刪除
+// .slide-in-blurred-right {
+//     animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+// }
+
+// @keyframes slide-in-blurred-right {
+//     0% {
+//         transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+//         transform-origin: 0% 50%;
+//         filter: blur(40px);
+//         opacity: 0;
+//     }
+
+//     100% {
+//         transform: translateX(0) scaleY(1) scaleX(1);
+//         transform-origin: 50% 50%;
+//         filter: blur(0);
+//         opacity: 1;
+//     }
+// }
+
+// footer區塊
+.footerUl {
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        display: block;
+        padding: 8px;
+
+    }
+}
+
+.footerInfo {
+    color: $primary;
+    font-weight: $font-weight-light;
+    font-size: $font-size-lg;
+    font-family: 'Noto Sans TC', 'Ubuntu';
+
+    @include device-sm {
+        font-size: $font-size-base;
+    }
+}

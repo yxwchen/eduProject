@@ -1,0 +1,67 @@
+// *專案全站設定
+//教育部專案字體-Noto+Sans+TC\Ubuntu\Rounded+1c
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;500;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Ubuntu:wght@300;400;500&display=swap');
+// bootstrap5 icon
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
+body {
+    font-family: 'Noto Sans TC', Ubuntu, 'M PLUS Rounded 1c', sans-serif; //英文字體放前面，中文字體放後面;字型有空格需用‘’包起來
+    line-height: 1.5;
+    padding: 0;
+    letter-spacing: 2px; //全站字距
+    // cursor全站鼠標變虎災
+    cursor: url(../images/arrow.cur), auto;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a,
+button {
+    text-decoration: none;
+    transition: all .2s;
+
+    // 無障礙tab選取focus的樣式
+    &:focus {
+        outline: 3px dashed $pink;
+    }
+}
+
+// 預設ul ol樣式沒有點,去掉bs預設底部1rem
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+// 消除bootstrap預設的mb
+p {
+    margin-bottom: 0;
+}
+
+// 消除bootstrap預設的lh
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    line-height: 1.5;
+}
+
+// 清除浮動（父元素使用偽元素清除浮動）
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
+}
